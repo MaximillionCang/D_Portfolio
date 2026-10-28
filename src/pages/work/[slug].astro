@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects, type Project } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+const { project } = Astro.props as { project: Project };
+const nextProject = projects[(projects.findIndex((item) => item.slug === project.slug) + 1) % projects.length];
+---
+
+<BaseLayout title={`${project.title} — Darren Ryusa`} description={project.summary}>
+  <article class={`detail-page detail-${project.theme}`}>
+    <div class="detail-top section-wrap"><a class="back-link" href="/#work">← Back to all projects</a><span>{project.index} / {projects.length.toString().padStart(2, '0')}</span></div>
+    <header class="detail-header section-wrap"><span class="eyebrow">{project.category} / DARREN RYUSA</span><h1>{project.title}<span class="detail-spark" aria-hidden="true">✳</span></h1><p>{project.summary}</p></header>
+    <div class="detail-cover section-wrap"><div class="detail-cover-inner"><img src={project.cover.src} width={project.cover.width} height={project.cover.height} alt={project.coverAlt} fetchpriority="high" /></div><span class="cover-label">THE PROJECT / {project.index}</span></div>
+    <section class="detail-story section-wrap" aria-labelledby="detail-story-title"><div class="section-index"><span>01 / PROJECT NOTES</span><span class="index-stroke"></span></div><div class="detail-story-grid"><h2 id="detail-story-title">A closer <em>look.</em></h2><p>{project.overview}</p></div></section>
+    {project.gallery.length > 0 && <section class="detail-gallery section-wrap" aria-label={`${project.title} gallery`}><div class="section-index"><span>02 / VISUAL ARCHIVE</span><span class="index-stroke"></span></div><div class="gallery-grid">{project.gallery.map((media, index) => <figure class={index === 0 ? 'gallery-item gallery-wide' : 'gallery-item'}><div class="gallery-image"><img src={media.image.src} width={media.image.width} height={media.image.height} alt={media.alt} loading="lazy" /></div><figcaption><span>{String(index + 1).padStart(2, '0')}</span>{media.caption}</figcaption></figure>)}</div></section>}
+    {project.video && <section class="detail-video section-wrap" aria-labelledby="motion-title"><div class="section-index"><span>03 / IN MOTION</span><span class="index-stroke"></span></div><h2 id="motion-title">A little <em>movement.</em></h2><video controls preload="none" playsinline poster={project.cover.src}><source src={project.video} type="video/mp4" />Your browser does not support this video.</video></section>}
+    <nav class="next-project section-wrap" aria-label="Next project"><a href={`/work/${nextProject.slug}/`}><span>UP NEXT / {nextProject.index}</span><strong>{nextProject.title}</strong><span class="next-arrow" aria-hidden="true">↗</span></a></nav>
+  </article>
+</BaseLayout>

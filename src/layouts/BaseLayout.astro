@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = 'Darren Ryusa — Creative Portfolio',
+  description = 'Selected graphic design, social media content and visual work by Darren Ryusa.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ec" />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <a class="brand" href="/" aria-label="Darren Ryusa, home"><span class="brand-star" aria-hidden="true">✳</span> DARREN RYUSA</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/#about">About</a>
+        <a href="/#work">Work</a>
+        <a href="/#contact">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer" id="contact">
+      <div class="footer-topline"><span>06 / LET'S TALK</span><span>OPEN FOR THE NEXT CONVERSATION <span aria-hidden="true">✳</span></span></div>
+      <div class="footer-main">
+        <div>
+          <p class="footer-eyebrow">Have something in mind?</p>
+          <h2>Let’s make<br /><em>something</em><br />worth seeing.</h2>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:greg.darrenryusa@gmail.com">greg.darrenryusa@gmail.com <span aria-hidden="true">↗</span></a>
+          <a href="tel:0177340593">0177340593 <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} DARREN RYUSA</span><a href="#top">BACK TO TOP ↑</a><span>MADE WITH A LITTLE WONDER</span></div>
+    </footer>
+  </body>
+</html>

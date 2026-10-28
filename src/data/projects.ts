@@ -1,0 +1,115 @@
+import type { ImageMetadata } from 'astro';
+import walkingTruck from '../assets/walking-truck.webp';
+import walkingBookmarks from '../assets/walking-bookmarks.webp';
+import walkingPink from '../assets/walking-keychain-pink.webp';
+import walkingOrange from '../assets/walking-keychain-orange.webp';
+import walkingBlue from '../assets/walking-keychain-blue.webp';
+import carnivalBoard from '../assets/carnival-board.webp';
+import carnivalMascot from '../assets/carnival-mascot.webp';
+import carnivalType from '../assets/carnival-type.webp';
+import mantraSocial from '../assets/mantra-social.webp';
+import realPoster from '../assets/real-poster.webp';
+import realBrandbook from '../assets/real-brandbook.webp';
+
+export const categories = [
+  'All projects',
+  'Graphic Design',
+  'Social media content',
+  'Illustration',
+  'Photography',
+] as const;
+
+export type Category = Exclude<(typeof categories)[number], 'All projects'>;
+
+export type ProjectMedia = {
+  image: ImageMetadata;
+  alt: string;
+  caption: string;
+};
+
+export type Project = {
+  slug: string;
+  title: string;
+  category: Category;
+  index: string;
+  label: string;
+  summary: string;
+  overview: string;
+  cover: ImageMetadata;
+  coverAlt: string;
+  gallery: ProjectMedia[];
+  theme: 'blue' | 'yellow' | 'pink' | 'cream';
+  featured?: boolean;
+  video?: string;
+};
+
+export const projects: Project[] = [
+  {
+    slug: 'walking-tales',
+    title: 'Walking Tales',
+    category: 'Graphic Design',
+    index: '01',
+    label: 'Illustrated world · print & objects',
+    summary: 'A colourful collection of illustrated pieces, from a library truck to bookmarks and little keepsakes.',
+    overview: 'Walking Tales brings the same playful visual language across different surfaces. The selected pieces here include a library truck illustration, a set of bookmarks, and three character keychains.',
+    cover: walkingTruck,
+    coverAlt: 'Colourful illustrated library truck from Walking Tales',
+    gallery: [
+      { image: walkingBookmarks, alt: 'Three illustrated Walking Tales bookmarks', caption: 'The bookmark series' },
+      { image: walkingPink, alt: 'Pink Walking Tales character keychain', caption: 'Character keepsake · pink' },
+      { image: walkingOrange, alt: 'Orange Walking Tales character keychain', caption: 'Character keepsake · orange' },
+      { image: walkingBlue, alt: 'Blue Walking Tales character keychain', caption: 'Character keepsake · blue' },
+    ],
+    theme: 'blue',
+    featured: true,
+  },
+  {
+    slug: 'a-carnival-in-every-pop',
+    title: 'A Carnival in Every Pop',
+    category: 'Graphic Design',
+    index: '02',
+    label: 'Visual identity · character design',
+    summary: 'A bold, character-led collection of popcorn graphics with a carnival spirit.',
+    overview: 'This archive brings together the project board, a popcorn character, and expressive typography. Each piece uses bright colour and playful shapes to build a consistent visual world.',
+    cover: carnivalBoard,
+    coverAlt: 'A Carnival in Every Pop visual design board',
+    gallery: [
+      { image: carnivalMascot, alt: 'Popcorn jester character artwork', caption: 'The popcorn character' },
+      { image: carnivalType, alt: 'Expressive carnival typography artwork', caption: 'Typography study' },
+    ],
+    theme: 'pink',
+    video: '/carnival-motion.mp4',
+  },
+  {
+    slug: 'mantra-talks',
+    title: 'Mantra Talks',
+    category: 'Social media content',
+    index: '03',
+    label: 'Social media content',
+    summary: 'A set of graphic posts presented together as a mobile social feed.',
+    overview: 'The selected artwork brings a collection of Mantra Talks posts together in a mobile feed. A striking red palette gives the pieces a consistent presence from one screen to the next.',
+    cover: mantraSocial,
+    coverAlt: 'Mantra Talks social graphics shown in a phone mockup',
+    gallery: [],
+    theme: 'cream',
+  },
+  {
+    slug: 'real-food',
+    title: 'Real Food',
+    category: 'Graphic Design',
+    index: '04',
+    label: 'Brand visuals · print',
+    summary: 'A visual collection presented through a poster and a brand book mockup.',
+    overview: 'The selected Real Food pieces show the visual identity in two print formats: a poster composition and a brand book.',
+    cover: realPoster,
+    coverAlt: 'Real Food poster on a floor mockup',
+    gallery: [
+      { image: realBrandbook, alt: 'Real Food brand book mockup', caption: 'Brand book' },
+    ],
+    theme: 'yellow',
+  },
+];
+
+export function getProject(slug: string) {
+  return projects.find((project) => project.slug === slug);
+}
