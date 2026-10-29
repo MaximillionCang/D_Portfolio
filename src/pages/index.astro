@@ -36,13 +36,19 @@ const remaining = projects.filter((project) => !project.featured);
     <div class="stripe stripe-bottom" aria-hidden="true"></div>
   </section>
 
-  <div class="marquee" aria-label="Marketing, social media and graphic design">
-    <div class="marquee-track" aria-hidden="true">
-      <span>MARKETING</span><b>✳</b><span>SOCIAL MEDIA</span><b>✳</b><span>GRAPHIC DESIGN</span><b>✳</b>
-      <span>MARKETING</span><b>✳</b><span>SOCIAL MEDIA</span><b>✳</b><span>GRAPHIC DESIGN</span><b>✳</b>
+  <div class="marquee-bleed" aria-label="Marketing, social media and graphic design">
+    <div class="marquee">
+      <div class="marquee-track" aria-hidden="true">
+        {[0, 1].map(() => (
+          <div class="marquee-group">
+            {Array.from({ length: 6 }, () => ['MARKETING', 'SOCIAL MEDIA', 'GRAPHIC DESIGN']).flat().map((label) => <><span>{label}</span><b>✳</b></>)}
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 
+  <div class="about-band">
   <section class="about-section section-wrap" id="about" aria-labelledby="about-title">
     <div class="section-index"><span>01 / A LITTLE INTRODUCTION</span><span class="index-stroke"></span></div>
     <div class="about-content">
@@ -54,6 +60,7 @@ const remaining = projects.filter((project) => !project.featured);
       <div class="laptop-sticker"><img src={laptopFriend.src} width={laptopFriend.width} height={laptopFriend.height} alt="" aria-hidden="true" /><span>always making<br />something new</span></div>
     </div>
   </section>
+  </div>
 
   <section class="work-section section-wrap" id="work" aria-labelledby="work-title">
     <div class="section-index"><span>02 / THE GOOD STUFF</span><span class="index-stroke"></span></div>
@@ -72,14 +79,14 @@ const remaining = projects.filter((project) => !project.featured);
     <div class="work-grid" id="project-grid">
       <article class="project-card featured-card" data-category={featured.category}>
         <a class="feature-link" href={`/work/${featured.slug}/`} aria-label={`Explore ${featured.title}`}>
-          <div class="featured-image"><span class="image-corner">FEATURED PROJECT ✳</span><img src={featured.cover.src} width={featured.cover.width} height={featured.cover.height} alt={featured.coverAlt} loading="lazy" /></div>
+          <div class="featured-image"><span class="image-corner">FEATURED PROJECT ✳</span><img class="project-logo" src={featured.logo.src} width={featured.logo.width} height={featured.logo.height} alt={featured.logoAlt} loading="lazy" /></div>
           <div class="featured-info"><span class="project-number">{featured.index} / SELECTED WORK</span><h3>{featured.title}<span aria-hidden="true">↗</span></h3><p>{featured.summary}</p><div class="project-bottom"><span>{featured.label}</span><span class="view-project">View project →</span></div></div>
         </a>
       </article>
       {remaining.map((project) => (
-        <article class={`project-card regular-card theme-${project.theme}`} data-category={project.category}>
+        <article class={`project-card regular-card card-tone-${project.cardTone}`} data-category={project.category}>
           <a href={`/work/${project.slug}/`} aria-label={`Explore ${project.title}`}>
-            <div class="card-image"><img src={project.cover.src} width={project.cover.width} height={project.cover.height} alt={project.coverAlt} loading="lazy" /><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <div class="card-image"><img class="project-logo" src={project.logo.src} width={project.logo.width} height={project.logo.height} alt={project.logoAlt} loading="lazy" /><span class="card-arrow" aria-hidden="true">↗</span></div>
             <div class="card-caption"><div><span class="project-number">{project.index} / {project.category}</span><h3>{project.title}</h3></div><span class="card-asterisk" aria-hidden="true">✳</span></div>
             <p>{project.summary}</p>
           </a>

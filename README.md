@@ -24,7 +24,11 @@ Kategori yang tersedia adalah **All projects**, **Graphic Design**, **Social med
 
 Untuk membuat ulang versi web dari aset sumber yang sekarang, jalankan `npm run assets:prepare`. Script `scripts/prepare-assets.mjs` membaca folder `Asset` tanpa mengubah file asli. Jika nama atau lokasi aset sumber berubah, sesuaikan daftar `selections` di script tersebut.
 
-Kursor bintang dibuat dari `Asset/Pointer.png` dan disimpan sebagai `public/cursor-star.png`. CSS untuk perilaku kursor berada di `src/styles/global.css`. Kursor ini hanya aktif pada perangkat dengan mouse; kursor teks dan perangkat sentuh tetap menggunakan perilaku standar.
+Kursor bintang dibuat dari `Asset/Element/Pointer.png` dan disimpan sebagai `public/cursor-star.png`. CSS untuk perilaku kursor berada di `src/styles/global.css`. Kursor ini hanya aktif pada perangkat dengan mouse; kursor teks dan perangkat sentuh tetap menggunakan perilaku standar.
+
+Struktur aset terbaru memakai `Asset/Element`, `Asset/Graphic_Design`, dan `Asset/Social_Media_Content`; foto profil bernama `Photo_Profile.JPG`. Script penyiapan gambar sudah mengikuti struktur ini. Logo berada di properti `logo`, sedangkan `cover` tetap berisi gambar utama halaman detail. Warna kotak logo diatur melalui `cardTone`.
+
+Halaman Carnival menampilkan dua video dengan poster cuplikan dan kontrol pemutaran. Untuk membuat ulang MP4 dan posternya, pasang FFmpeg lalu jalankan `npm run videos:prepare`. Jika FFmpeg tidak ada di PATH, jalankan `node scripts/prepare-videos.mjs Asset "path/ke/ffmpeg.exe"`. Video memakai `preload="none"` dan tidak diputar otomatis. Lihat `docs/ASSET_AUDIT.md` untuk inventaris 44 aset dan rekomendasi penempatan media tambahan.
 
 ## Hal yang perlu dilengkapi sebelum dipublikasikan sebagai portfolio final
 
@@ -32,7 +36,6 @@ Kursor bintang dibuat dari `Asset/Pointer.png` dan disimpan sebagai `public/curs
 - Konfirmasi apakah Mantra Talks memang masuk kategori Social media content.
 - Tambahkan karya Social media content, Illustration, dan Photography lain saat aset dan ceritanya tersedia.
 - Konfirmasi format internasional untuk nomor telepon `0177340593` bila website ditujukan kepada perekrut lintas negara.
-- Periksa hak publikasi foto, karya, dan video bersama Darren sebelum membuat situs publik.
 
 ## Struktur penting
 

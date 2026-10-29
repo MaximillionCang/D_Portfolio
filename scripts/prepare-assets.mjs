@@ -31,7 +31,7 @@ function locate(folder, filename) {
 }
 
 const selections = [
-  ['.', 'IMG_5538 2.JPG', 'portrait.webp', 1200, false],
+  ['.', 'Photo_Profile.JPG', 'portrait.webp', 1200, false],
   ['.', '18.png', 'mascot.webp', 1100, true],
   ['.', '19.png', 'pin.webp', 600, true],
   ['.', '20.png', 'stickers.webp', 1000, true],
@@ -41,12 +41,15 @@ const selections = [
   ['walking tales/', 'by Darren Ryusa (1).png', 'walking-keychain-pink.webp', 1400, false],
   ['walking tales/', 'by Darren Ryusa (2).png', 'walking-keychain-orange.webp', 1400, false],
   ['walking tales/', 'by Darren Ryusa (3).png', 'walking-keychain-blue.webp', 1400, false],
-  ['walking tales/', 'Untitled-4.png', 'walking-logo.webp', 700, true],
+  ['walking tales/', 'logo 2.png', 'walking-logo.webp', 900, true],
   ['a carnival in every pop/', 'Untitled design.jpg', 'carnival-board.webp', 1800, false],
   ['a carnival in every pop/', 'mascot 1.png', 'carnival-mascot.webp', 800, true],
-  ['a carnival in every pop/', 'typo (1) (1).png', 'carnival-type.webp', 1800, false],
+  ['a carnival in every pop/', 'logo.png', 'carnival-logo.webp', 1000, true],
   ['mantra talks/', 'by Darren Ryusa (9).png', 'mantra-social.webp', 1800, false],
-  ['real food/', 'Poster_on_the_floor_mockup_1.png', 'real-poster.webp', 1800, false],
+  ['mantra talks/', 'logo 3.png', 'mantra-logo.webp', 1000, true],
+  ['mantra talks/', 'paper.png', 'mantra-poster.webp', 1400, true],
+  ['real food/', 'logo 5.png', 'real-logo.webp', 1000, true],
+  ['real food/', 'real food.png', 'real-poster.webp', 1800, false],
   ['real food/', 'Project Portfolio.png', 'real-brandbook.webp', 1800, false],
 ];
 
