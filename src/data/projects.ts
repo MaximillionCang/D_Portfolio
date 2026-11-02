@@ -43,6 +43,7 @@ export type Project = {
   overview: string;
   cover: ImageMetadata;
   coverAlt: string;
+  coverLayout?: 'portrait' | 'panorama';
   logo: ImageMetadata;
   logoAlt: string;
   cardTone: 'yellow' | 'light-blue' | 'blue';
@@ -92,6 +93,7 @@ export const projects: Project[] = [
     overview: 'This archive brings together the project board, a popcorn character, and expressive typography. Each piece uses bright colour and playful shapes to build a consistent visual world.',
     cover: carnivalBoard,
     coverAlt: 'A Carnival in Every Pop visual design board',
+    coverLayout: 'panorama',
     logo: carnivalLogo,
     logoAlt: 'A Carnival in Every Pop campaign logo',
     cardTone: 'yellow',
@@ -115,6 +117,7 @@ export const projects: Project[] = [
     overview: 'The selected artwork brings a collection of Mantra Talks posts together in a mobile feed. A striking red palette gives the pieces a consistent presence from one screen to the next.',
     cover: mantraSocial,
     coverAlt: 'Mantra Talks social graphics shown in a phone mockup',
+    coverLayout: 'portrait',
     logo: mantraLogo,
     logoAlt: 'Mantra Talks logo',
     cardTone: 'light-blue',

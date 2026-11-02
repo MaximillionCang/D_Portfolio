@@ -11,10 +11,15 @@ const remaining = projects.filter((project) => !project.featured);
 ---
 
 <BaseLayout>
-  <section class="hero-shell" aria-labelledby="hero-title">
-    <div class="stripe stripe-top" aria-hidden="true"></div>
+  <section class="hero-shell section-wrap" aria-labelledby="hero-title">
     <div class="hero-panel">
       <div class="hero-meta"><span>THE WORK OF DARREN RYUSA</span><span>PORTFOLIO / 2026</span></div>
+      <div class="hero-copy">
+        <div class="hero-kicker">MARKETING · SOCIAL MEDIA · GRAPHIC DESIGNER</div>
+        <h1 id="hero-title"><span>Creative</span><span>Portfolio<span class="title-spark" aria-hidden="true">✴</span></span></h1>
+        <div class="hero-byline"><span>by Darren Ryusa</span></div>
+        <div class="hero-intro"><p>A collection of work, ideas and things made along the way.</p><a class="round-link" href="#work"><span>See<br />my work</span><span aria-hidden="true">↘</span></a></div>
+      </div>
       <div class="hero-art">
         <div class="photo-paper">
           <img src={portrait.src} width={portrait.width} height={portrait.height} alt="Portrait of Darren Ryusa" fetchpriority="high" />
@@ -24,20 +29,13 @@ const remaining = projects.filter((project) => !project.featured);
         <img class="hero-mascot" src={mascot.src} width={mascot.width} height={mascot.height} alt="" aria-hidden="true" />
         <span class="hero-doodle" aria-hidden="true">✳</span>
       </div>
-      <div class="hero-copy">
-        <div class="hero-kicker"><span class="kicker-line"></span> MARKETING · SOCIAL MEDIA · GRAPHIC DESIGNER</div>
-        <h1 id="hero-title"><span>Creative</span><span>Portfolio<span class="title-spark" aria-hidden="true">✴</span></span></h1>
-        <div class="hero-byline"><span>by Darren Ryusa</span></div>
-        <p>A collection of work, ideas and things made along the way.</p>
-        <a class="round-link" href="#work"><span>Explore<br />my work</span><span aria-hidden="true">↘</span></a>
-      </div>
       <div class="hero-bottom"><span>EST. WITH CURIOSITY</span><span>SCROLL TO EXPLORE ↓</span></div>
     </div>
-    <div class="stripe stripe-bottom" aria-hidden="true"></div>
   </section>
 
   <div class="marquee-bleed" aria-label="Marketing, social media and graphic design">
     <div class="marquee">
+      <button class="marquee-toggle" type="button" aria-label="Pause moving text" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button>
       <div class="marquee-track" aria-hidden="true">
         {[0, 1].map(() => (
           <div class="marquee-group">
@@ -103,6 +101,16 @@ const remaining = projects.filter((project) => !project.featured);
   </section>
 
   <script>
+    const marqueeToggle = document.querySelector<HTMLButtonElement>('.marquee-toggle');
+    marqueeToggle?.addEventListener('click', () => {
+      const paused = marqueeToggle.getAttribute('aria-pressed') !== 'true';
+      marqueeToggle.setAttribute('aria-pressed', String(paused));
+      marqueeToggle.setAttribute('aria-label', paused ? 'Resume moving text' : 'Pause moving text');
+      marqueeToggle.closest('.marquee')?.classList.toggle('is-paused', paused);
+      const icon = marqueeToggle.querySelector('span');
+      if (icon) icon.textContent = paused ? '▶' : 'Ⅱ';
+    });
+
     const filters = [...document.querySelectorAll<HTMLButtonElement>('.filter')];
     const cards = [...document.querySelectorAll<HTMLElement>('.project-card')];
     const grid = document.querySelector<HTMLElement>('#project-grid');
