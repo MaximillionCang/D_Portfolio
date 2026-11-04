@@ -4,6 +4,7 @@
   --paper: #f4f5f9;
   --yellow: #f8f5b0;
   --brown: #4d2a0a;
+  --about-surface: color-mix(in srgb, var(--blue-light) 45%, var(--paper));
   --serif: 'Instrument Serif', Georgia, serif;
   --sans: 'DM Sans', sans-serif;
   --mono: 'Space Mono', monospace;
@@ -59,14 +60,14 @@ button:active, a:active { transform: translateY(1px); }
 .photo-paper span { position: absolute; bottom: 9px; left: 15px; font: 400 .68rem var(--mono); }
 .hero-mascot { position: absolute; width: 186px; right: 0; bottom: 0; filter: drop-shadow(4px 12px 8px #4d2a0a20); }
 .hero-pin { position: absolute; top: 25px; left: 0; width: 62px; z-index: 2; transform: rotate(-22deg); }
-.marquee-bleed { overflow: clip; padding-block: 20px; background: linear-gradient(var(--paper) 50%, var(--blue-light) 50%); }
+.marquee-bleed { overflow: clip; padding-block: 20px; background: linear-gradient(var(--paper) 50%, var(--about-surface) 50%); }
 .marquee { position: relative; width: calc(100% + 180px); margin-left: -90px; background: var(--brown); color: var(--yellow); transform: rotate(-1deg); }
 .marquee-track { display: flex; width: max-content; padding: 11px 0; animation: marquee 110s linear infinite; font-size: .95rem; font-weight: 600; }
 .marquee-group { display: flex; flex: 0 0 auto; align-items: center; min-width: calc(100vw + 180px); gap: 30px; padding-right: 30px; }
 .marquee-track b { color: var(--blue-light); font-size: 1.3rem; font-weight: 400; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
-.about-band { background: color-mix(in srgb, var(--blue-light) 45%, var(--paper)); padding-block: 58px 48px; }
+.about-band { background: var(--about-surface); padding-block: 58px 48px; }
 .about-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 70px; align-items: center; }
 .about-intro { position: relative; padding-right: 55px; }
 .about-intro h2 { font: 400 clamp(3.7rem, 6.7vw, 6.1rem)/.94 var(--serif); letter-spacing: -.045em; }
