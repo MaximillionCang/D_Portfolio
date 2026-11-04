@@ -9,13 +9,15 @@ import Icon from '../../components/Icon.astro';
 export function getStaticPaths() { return projects.map(project => ({ params: { slug: project.slug }, props: { project } })); }
 const { project } = Astro.props as { project: Project };
 const next = projects[(projects.findIndex(item => item.slug === project.slug) + 1) % projects.length];
-const gallery = project.category === 'Photography' ? project.gallery.filter(item => item.source !== project.cover.source) : project.gallery;
+const pairedCover = project.coverLayout === 'paired';
+const leadingImages = pairedCover ? project.gallery.slice(0, 1) : [];
+const gallery = project.category === 'Photography' ? project.gallery.filter(item => item.source !== project.cover.source) : pairedCover ? project.gallery.slice(1) : project.gallery;
 ---
 <BaseLayout title={`${project.title} | Darren Ryusa`} description={project.summary}>
   <article class={`detail-page ${project.category === 'Photography' ? 'photography-project' : ''}`}>
     <div class="detail-top section-wrap"><a class="button button-secondary back-button" href="/#work"><Icon name="previous" size={18} />All projects</a></div>
-    <header class="detail-header section-wrap"><span class="category-label">{project.category}</span><h1>{project.title}</h1><p>{project.summary}</p></header>
-    <div class={`detail-cover section-wrap ${project.coverLayout === 'portrait' ? 'cover-portrait' : ''} ${project.coverLayout === 'wide' ? 'cover-wide' : ''}`}><Artwork media={project.cover} priority /></div>
+    <header class="detail-header section-wrap"><h1>{project.title}</h1><p>{project.summary}</p></header>
+    <div class={`detail-cover section-wrap ${project.coverLayout === 'portrait' ? 'cover-portrait' : ''} ${project.coverLayout === 'wide' ? 'cover-wide' : ''} ${pairedCover ? 'cover-paired' : ''}`}><Artwork media={project.cover} priority />{leadingImages.map(item => <Artwork media={item} />)}</div>
     <section class="project-story section-wrap" aria-labelledby="project-story-title">
       <div class="story-description"><h2 id="project-story-title">About the project</h2>{project.description.map(paragraph => <p>{paragraph}</p>)}</div>
       {(project.role || project.software.length > 0 || project.metrics) && <aside class="project-facts" aria-label="Project details">{project.role && <div><h3>My role</h3><p>{project.role}</p>{project.context && <span>{project.context}</span>}</div>}{project.software.length > 0 && <div><h3>Made with</h3><SoftwareTools tools={project.software} /></div>}{project.metrics && <div><h3>Video engagement</h3><div class="project-metrics"><span><Icon name="eye" size={24} /><strong>{project.metrics.views}</strong><span>Views</span></span><span><Icon name="share" size={24} /><strong>{project.metrics.shares}</strong><span>Shares</span></span></div></div>}</aside>}

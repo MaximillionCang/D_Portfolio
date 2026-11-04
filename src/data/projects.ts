@@ -10,7 +10,7 @@ export type Project = {
   slug: string; title: string; cardTitle?: string; category: Category; summary: string;
   description: string[]; role?: string; context?: string; software: SoftwareKey[];
   card: ProjectMedia; cover: ProjectMedia; logo?: boolean;
-  tone: 'blue-light' | 'yellow' | 'blue' | 'mist'; coverLayout?: 'portrait' | 'wide';
+  tone: 'blue-light' | 'yellow' | 'blue' | 'mist'; coverLayout?: 'portrait' | 'wide' | 'paired';
   gallery: ProjectMedia[]; videos?: ProjectVideo[];
   metrics?: { views: string; shares: string }; featured?: boolean;
 };
@@ -116,7 +116,7 @@ export const projects: Project[] = [
       'This brochure for Tenggarra Food Industries was developed as an individual Digital Print Production coursework project. It refreshes the company’s visual presentation through engaging, cohesive design.',
       'As the Graphic Designer, I created the brochure layout, mascot and typography and handled print production to bring the final piece together.',
     ],
-    role: 'Graphic Designer', context: 'Individual coursework', software: ['illustrator', 'photoshop'], tone: 'yellow',
+    role: 'Graphic Designer', context: 'Individual coursework', software: ['illustrator', 'photoshop'], tone: 'yellow', coverLayout: 'paired',
     card: graphic('digital print production', 'DIGITAL PRINT (1).png', 'Tenggarra Food Industries brochure layout'), cover: graphic('digital print production', 'DIGITAL PRINT (1).png', 'Food industry brochure with illustrated market stalls'),
     gallery: [graphic('digital print production', 'DIGITAL PRINT.png', 'Reverse side of the Tenggarra brochure', 'The other side')],
   },

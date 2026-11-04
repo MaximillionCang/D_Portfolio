@@ -34,7 +34,7 @@ Font: Instrument Serif, DM Sans, Space Mono. Palet tampilan: #4B86B0, #C6D8E6, #
 
 `src/data/projects.ts` menyimpan judul, kategori, deskripsi, kontribusi, software, sampul, galeri, dan video setiap proyek. Urutan array menentukan urutan beranda dan tautan Next project. Slug real-food dipertahankan untuk proyek yang sekarang bernama **Keep It Real**, agar URL lama tetap berfungsi.
 
-`src/data/skills.ts` menyimpan tujuh nilai software yang diberikan klien. Label self-rated membedakan penilaian pribadi dari sertifikasi. Angka Sportlight 15.1k views dan 606 shares berasal dari klien dan bukan penghitung langsung.
+`src/data/skills.ts` menyimpan tujuh nilai software yang diberikan klien. Nilainya merupakan penilaian pribadi; keterangan ini tetap tersedia pada label pembaca layar, tanpa tulisan pendukung di tampilan. Angka Sportlight 15.1k views dan 606 shares berasal dari klien dan bukan penghitung langsung.
 
 Untuk menambah gambar, letakkan file asli di subfolder Asset, jalankan penyiapan media, lalu referensikan path sumbernya melalui data proyek. Alt text harus mendeskripsikan gambar sebenarnya. Software Tutorising dan Sportlight sengaja tidak diisi karena klien belum menyebutkannya.
 

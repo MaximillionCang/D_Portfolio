@@ -9,6 +9,6 @@ const { project } = Astro.props;
     <div class={`project-art tone-${project.tone} ${project.logo ? 'logo-art' : 'image-art'}`}>
       <img src={project.card.thumbnail.src} srcset={project.card.thumbnail.width < project.card.image.width ? `${project.card.thumbnail.src} ${project.card.thumbnail.width}w, ${project.card.image.src} ${project.card.image.width}w` : undefined} sizes={project.featured ? '(min-width: 900px) 60vw, 90vw' : '(min-width: 1000px) 30vw, (min-width: 600px) 45vw, 90vw'} width={project.card.image.width} height={project.card.image.height} alt={project.card.alt} loading="lazy" />
     </div>
-    <div class="project-caption"><div><span class="project-category">{project.category}</span><h3>{project.cardTitle ?? project.title}</h3>{project.featured && <p>{project.summary}</p>}</div><span class="project-action">View project <Icon name="arrow" size={19} /></span></div>
+    <div class="project-caption"><div><h3>{project.cardTitle ?? project.title}</h3>{project.featured && <p>{project.summary}</p>}</div><span class="project-action">View project <Icon name="arrow" size={19} /></span></div>
   </a>
 </article>

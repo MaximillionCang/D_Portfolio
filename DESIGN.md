@@ -18,13 +18,13 @@ The About background is a mix of the two supplied light neutrals to preserve suf
 
 - Hero: personal portrait and mascot overlap, large two-line title, one solid View projects action. Shadow is limited to the physical paper/mascot overlap.
 - About: only Darren is blue in the greeting. Short factual student bio, three recognizable discipline icons with labels, seven self-rated software rings. A ring is a value indicator, not decoration.
-- Work: one featured project, three-column art-led grid on desktop, responsive two/single columns, a wide photography collection. Remove repeated project numbers, card summaries and decorative mini labels. Each card has an explicit View project action.
-- Detail: project artwork, short paragraphs, role and software facts, expandable image gallery, native video players in phone/tablet frames.
+- Work: one featured project, three-column art-led grid without category captions on desktop, responsive two/single columns, a wide photography collection. Remove repeated project numbers, card summaries and decorative mini labels. Each card has an explicit View project action.
+- Detail: project artwork, short paragraphs, role and software facts, paired brochure images before the story for Digital Print Production, expandable image gallery, native video players in phone/tablet frames.
 - Footer: email and phone number are plain text with identifying icons. The number is identified by phone and WhatsApp icons without link/button treatment. LinkedIn is a compact pale-yellow button with slightly rounded corners.
 
 ## Interaction
 
-Solid brown primary buttons and outlined light secondary buttons use readable labels, visible borders, 44px minimum hit areas, hover and pressed states, and keyboard focus. No nested card buttons; the whole card is one link with a visible action treatment. Filters are actual buttons with pressed states and live result counts. Image links open a native dialog and still work as direct image links without JavaScript. Video playback uses browser controls, no autoplay and no preload. The retained moving discipline strip has pause/resume and respects reduced motion.
+Solid brown primary buttons and outlined light secondary buttons use readable labels, visible borders, 44px minimum hit areas, hover and pressed states, and keyboard focus. No nested card buttons; the whole card is one link with a visible action treatment. Filters are actual buttons with pressed states and live result counts. Image links open a native dialog and still work as direct image links without JavaScript. Video playback uses browser controls, no autoplay and no preload. The moving discipline strip loops continuously without a pause button, as requested, and respects the operating system reduced-motion preference.
 
 ## Content
 

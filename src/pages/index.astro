@@ -27,7 +27,6 @@ const disciplines = [{ name: 'Marketing', icon: 'marketing' }, { name: 'Social M
   </section>
 
   <div class="marquee-bleed"><div class="marquee" aria-label="Marketing, social media and graphic design">
-    <button class="marquee-toggle" type="button" aria-label="Pause moving text" aria-pressed="false"><Icon name="pause" size={18} /></button>
     <div class="marquee-track" aria-hidden="true">{[0, 1].map(() => <div class="marquee-group">{Array.from({ length: 5 }, () => ['Marketing', 'Social media', 'Graphic design']).flat().map(label => <><span>{label}</span><b>✳</b></>)}</div>)}</div>
   </div></div>
 
@@ -36,7 +35,7 @@ const disciplines = [{ name: 'Marketing', icon: 'marketing' }, { name: 'Social M
       <div class="about-intro"><h2 id="about-title">Hello there,<br />I’m <em>Darren</em>.</h2><p>I’m a final-year Advertising student at Xiamen University Malaysia.</p><img class="laptop-friend" src={laptopFriend.src} width={laptopFriend.width} height={laptopFriend.height} alt="" aria-hidden="true" /></div>
       <div class="about-disciplines"><h3>What I do</h3><div class="disciplines">{disciplines.map(item => <div class="discipline"><span class="discipline-icon"><Icon name={item.icon} size={34} /></span><strong>{item.name}</strong></div>)}</div><a class="button button-secondary" href="#work">See my work <Icon name="arrow" size={19} /></a></div>
     </div>
-    <div class="skills-section"><div class="skills-heading"><h3>Tools I work with</h3><span>Self-rated proficiency</span></div><div class="skills-list">{Object.entries(software).map(([key, item]) => <div class="skill-item"><div class="skill-orbit" style={`--score: ${item.rating * 10}%`} aria-hidden="true"><span>{item.mark}</span></div><strong>{item.name}</strong><span>{item.rating}/10</span><meter class="sr-only" min="0" max="10" value={item.rating} aria-label={`${item.name}, self-rated proficiency`}>{item.rating} out of 10</meter></div>)}</div></div>
+    <div class="skills-section"><div class="skills-heading"><h3>Tools I work with</h3></div><div class="skills-list">{Object.entries(software).map(([key, item]) => <div class="skill-item"><div class="skill-orbit" style={`--score: ${item.rating * 10}%`} aria-hidden="true"><span>{item.mark}</span></div><strong>{item.name}</strong><span>{item.rating}/10</span><meter class="sr-only" min="0" max="10" value={item.rating} aria-label={`${item.name}, self-rated proficiency`}>{item.rating} out of 10</meter></div>)}</div></div>
   </div></section>
 
   <section class="work-section section-wrap" id="work" aria-labelledby="work-title">
@@ -48,15 +47,6 @@ const disciplines = [{ name: 'Marketing', icon: 'marketing' }, { name: 'Social M
   </section>
 
   <script>
-    const toggle = document.querySelector<HTMLButtonElement>('.marquee-toggle');
-    toggle?.addEventListener('click', () => {
-      const paused = toggle.getAttribute('aria-pressed') !== 'true';
-      toggle.setAttribute('aria-pressed', String(paused));
-      toggle.setAttribute('aria-label', paused ? 'Resume moving text' : 'Pause moving text');
-      toggle.closest('.marquee')?.classList.toggle('is-paused', paused);
-      const paths = toggle.querySelectorAll('path');
-      paths.forEach(path => path.setAttribute('d', paused ? 'm9 5 11 7-11 7z' : (path === paths[0] ? 'M8 5v14' : 'M16 5v14')));
-    });
     const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-filter]')];
     const cards = [...document.querySelectorAll<HTMLElement>('.project-card')];
     function filterProjects(category: string) {
