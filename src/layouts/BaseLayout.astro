@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Icon from '../components/Icon.astro';
 
 type Props = {
   title?: string;
@@ -7,7 +8,7 @@ type Props = {
 };
 
 const {
-  title = 'Darren Ryusa — Creative Portfolio',
+  title = 'Darren Ryusa | Creative Portfolio',
   description = 'Selected graphic design, social media content and visual work by Darren Ryusa.',
 } = Astro.props;
 ---
@@ -17,7 +18,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f7f5ec" />
+    <meta name="theme-color" content="#f4f5f9" />
     <meta name="description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -31,28 +32,27 @@ const {
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" id="top">
-      <a class="brand" href="/" aria-label="Darren Ryusa, home"><span class="brand-star" aria-hidden="true">✳</span> DARREN RYUSA</a>
+      <a class="brand" href="/" aria-label="Darren Ryusa, home"><span class="brand-star" aria-hidden="true">✳</span><span>Darren Ryusa</span></a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="/#about">About</a>
         <a href="/#work">Work</a>
-        <a href="/#contact">Contact <span aria-hidden="true">↗</span></a>
+        <a class="nav-contact" href="/#contact">Contact <Icon name="email" size={17} /></a>
       </nav>
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer" id="contact">
-      <div class="footer-topline"><span>06 / LET'S TALK</span><span>OPEN FOR THE NEXT CONVERSATION <span aria-hidden="true">✳</span></span></div>
       <div class="footer-main">
         <div>
-          <p class="footer-eyebrow">Have something in mind?</p>
-          <h2>Let’s make<br /><em>something</em><br />worth seeing.</h2>
+          <h2>Let’s <em>talk.</em></h2>
+          <p>Have a project in mind? I’d love to hear about it.</p>
         </div>
         <div class="footer-links">
-          <a href="mailto:greg.darrenryusa@gmail.com">greg.darrenryusa@gmail.com <span aria-hidden="true">↗</span></a>
-          <a href="tel:0177340593">0177340593 <span aria-hidden="true">↗</span></a>
-          <a href="https://www.linkedin.com/in/darren-ryusa-31659b30b/" target="_blank" rel="noopener noreferrer" aria-label="Darren Ryusa on LinkedIn (opens in a new tab)"><span><small>LINKEDIN</small>Darren Ryusa</span><span aria-hidden="true">↗</span></a>
+          <a href="mailto:greg.darrenryusa@gmail.com"><Icon name="email" size={27} /><span><strong>Email</strong><span>greg.darrenryusa@gmail.com</span></span><Icon name="external" size={21} /></a>
+          <a href="tel:0177340593"><Icon name="phone" size={27} /><span><strong>Phone</strong><span>0177340593</span></span><Icon name="external" size={21} /></a>
+          <a href="https://www.linkedin.com/in/darren-ryusa-31659b30b/" target="_blank" rel="noopener noreferrer" aria-label="Darren Ryusa on LinkedIn (opens in a new tab)"><Icon name="linkedin" size={27} /><span><strong>LinkedIn</strong><span>Darren Ryusa</span></span><Icon name="external" size={21} /></a>
         </div>
       </div>
-      <div class="footer-bottom"><span>© {new Date().getFullYear()} DARREN RYUSA</span><a href="#top">BACK TO TOP ↑</a><span>MADE WITH A LITTLE WONDER</span></div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} Darren Ryusa</span><a class="footer-top-link" href="#top">Back to top <Icon name="down" size={17} /></a></div>
     </footer>
   </body>
 </html>

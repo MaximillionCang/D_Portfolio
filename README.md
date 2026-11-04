@@ -1,53 +1,71 @@
 # Darren Ryusa — Creative Portfolio
 
-Website portfolio berbahasa Inggris untuk Darren Ryusa. Dibangun dengan Astro, TypeScript, CSS, dan aset lokal dari folder `Asset`. Hasilnya adalah situs statis yang siap dihubungkan ke Vercel.
+Portfolio berbahasa Inggris untuk menampilkan karya dan membantu Darren melamar kerja. Dibangun dengan Astro 5, TypeScript, dan CSS; hasil build berupa website statis untuk Vercel.
 
-## Menjalankan website
+## Menjalankan
 
-Gunakan Node.js 22 atau lebih baru. Dari folder `Portfolio_Darren`:
+Gunakan Node.js 22 atau lebih baru dari folder Portfolio_Darren:
 
 ```powershell
 npm install
 npm run dev
 ```
 
-Buka alamat lokal yang ditampilkan. Sebelum mengirim perubahan ke Vercel, jalankan `npm run build`. Folder `dist` adalah hasil build dan tidak perlu diedit.
+Sebelum publikasi:
 
-## Memperbarui karya
+```powershell
+npx tsc --noEmit
+npm run build
+```
 
-1. Simpan gambar baru di `src/assets` dalam format web yang ringan, misalnya WebP. File asli boleh tetap berada di `Asset`.
-2. Tambahkan atau ubah proyek di `src/data/projects.ts`. Isi `slug`, `title`, `category`, ringkasan, gambar sampul, `overview`, dan `gallery`. Setiap gambar perlu alt text yang menjelaskan isinya.
-3. Jalankan `npm run dev`, buka kartu proyek, coba filternya, lalu cek tampilan ponsel.
-4. Jalankan `npm run build` sebelum publikasi.
+Vercel: preset **Astro**, build command `npm run build`, output `dist`, root direktori proyek. Tidak perlu environment variable. Build memakai media web yang sudah masuk Git, sehingga folder asli Asset tidak diperlukan di Vercel.
 
-Kategori yang tersedia adalah **All projects**, **Graphic Design**, **Social media content**, **Illustration**, dan **Photography**. Kategori kosong otomatis menampilkan pesan “More to come”. Urutan proyek mengikuti urutan dalam array `projects`. Properti `featured: true` menentukan kartu unggulan.
+## Isi dan tampilan
 
-Untuk membuat ulang versi web dari aset sumber yang sekarang, jalankan `npm run assets:prepare`. Script `scripts/prepare-assets.mjs` membaca folder `Asset` tanpa mengubah file asli. Jika nama atau lokasi aset sumber berubah, sesuaikan daftar `selections` di script tersebut.
+- 11 proyek, dengan filter Graphic Design, Social media content, Illustration, dan Photography.
+- 62 gambar proyek dan 8 video, termasuk 29 foto dan dua reel Mantra Talks.
+- Galeri gambar layar besar dengan tombol Close, Previous, Next dan kontrol keyboard.
+- Video native dengan kontrol browser, tanpa autoplay; portrait memakai bingkai ponsel, landscape memakai bingkai tablet.
+- Email, telepon, dan LinkedIn memiliki ikon dan label. Informasi kontak berada di `src/layouts/BaseLayout.astro`.
 
-Kursor bintang dibuat dari `Asset/Element/Pointer.png` dan disimpan sebagai PNG sRGB transparan 32×32 di `public/cursor-star.png`. Ukuran dan hotspot 16,16 mengikuti rekomendasi kompatibilitas [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/cursor). CSS memakai `any-pointer: fine` dan `any-hover: hover` untuk mouse/trackpad, dengan fallback sistem dan kursor teks standar. Safari/macOS perlu dicek langsung pada perangkat Mac; preview pengembangan memakai Chromium di Windows.
+Font: Instrument Serif, DM Sans, Space Mono. Palet tampilan: #4B86B0, #C6D8E6, #F4F5F9, #F8F5B0, #4D2A0A. Tidak ada latar UI pink; warna asli karya/foto dipertahankan. Arahan desain ada di DESIGN.md.
 
-Struktur aset terbaru memakai `Asset/Element`, `Asset/Graphic_Design`, dan `Asset/Social_Media_Content`; foto profil bernama `Photo_Profile.JPG`. Script penyiapan gambar sudah mengikuti struktur ini. Logo berada di properti `logo`, sedangkan `cover` tetap berisi gambar utama halaman detail. Warna kotak logo diatur melalui `cardTone`.
+## Mengubah konten
 
-Gambar proyek dipangkas mengikuti batas transparansinya. Khusus papan Carnival, `scripts/image-canvas.mjs` menghapus hanya kanvas putih yang tersambung ke tepi; putih di dalam karya dipertahankan. Mockup Mantra Talks diputar 90° menjadi portrait saat penyiapan aset, dan `coverLayout: 'portrait'` membuat framenya mengikuti orientasi itu. Seluruh file asli di `Asset` tetap utuh.
+`src/data/projects.ts` menyimpan judul, kategori, deskripsi, kontribusi, software, sampul, galeri, dan video setiap proyek. Urutan array menentukan urutan beranda dan tautan Next project. Slug real-food dipertahankan untuk proyek yang sekarang bernama **Keep It Real**, agar URL lama tetap berfungsi.
 
-Kontak di `src/layouts/BaseLayout.astro` mencakup email, telepon, dan [LinkedIn Darren Ryusa](https://www.linkedin.com/in/darren-ryusa-31659b30b/). Teks berjalan memiliki tombol pause/resume serta mengikuti preferensi reduced motion. Di HP, filter dapat digeser mendatar tanpa membuat halaman ikut melebar.
+`src/data/skills.ts` menyimpan tujuh nilai software yang diberikan klien. Label self-rated membedakan penilaian pribadi dari sertifikasi. Angka Sportlight 15.1k views dan 606 shares berasal dari klien dan bukan penghitung langsung.
 
-Halaman Carnival menampilkan dua video dengan poster cuplikan dan kontrol pemutaran. Untuk membuat ulang MP4 dan posternya, pasang FFmpeg lalu jalankan `npm run videos:prepare`. Jika FFmpeg tidak ada di PATH, jalankan `node scripts/prepare-videos.mjs Asset "path/ke/ffmpeg.exe"`. Video memakai `preload="none"` dan tidak diputar otomatis. Lihat `docs/ASSET_AUDIT.md` untuk inventaris 44 aset dan rekomendasi penempatan media tambahan.
+Untuk menambah gambar, letakkan file asli di subfolder Asset, jalankan penyiapan media, lalu referensikan path sumbernya melalui data proyek. Alt text harus mendeskripsikan gambar sebenarnya. Software Tutorising dan Sportlight sengaja tidak diisi karena klien belum menyebutkannya.
 
-## Hal yang perlu dilengkapi sebelum dipublikasikan sebagai portfolio final
+## Menyiapkan media
 
-- Minta Darren meninjau semua deskripsi proyek serta menambahkan brief, kontribusi pribadi, proses, dan hasil yang benar-benar dapat diklaim. Teks saat ini hanya mendeskripsikan karya yang terlihat pada aset.
-- Konfirmasi apakah Mantra Talks memang masuk kategori Social media content.
-- Tambahkan karya Social media content, Illustration, dan Photography lain saat aset dan ceritanya tersedia.
-- Konfirmasi format internasional untuk nomor telepon `0177340593` bila website ditujukan kepada perekrut lintas negara.
+Folder Asset berisi file asli dan diabaikan Git. Versi web berada di `src/assets/portfolio` dan `public/videos`, serta **harus** masuk Git. Untuk menyiapkan ulang, pasang FFmpeg dan jalankan:
 
-## Struktur penting
+```powershell
+npm run portfolio:prepare
+```
 
-- `src/pages/index.astro`: beranda, About, filter karya.
-- `src/pages/work/[slug].astro`: halaman detail otomatis untuk tiap proyek.
-- `src/data/projects.ts`: daftar dan penjelasan proyek.
-- `src/styles/global.css`: seluruh arahan visual dan tampilan responsif.
-- `src/layouts/BaseLayout.astro`: navigasi, metadata, dan kontak.
-- `src/assets`: gambar versi web; `public`: kursor, favicon, video.
+Jika FFmpeg tidak berada di PATH:
 
-Vercel dapat membangun proyek Astro statis ini dengan build command `npm run build` dan output directory `dist`. Belum ada konfigurasi server atau kredensial yang diperlukan.
+```powershell
+node scripts/prepare-portfolio.mjs Asset "C:\path\ke\ffmpeg.exe"
+```
+
+Script mempertahankan file asli. Gambar diorientasikan dari EXIF, dikonversi menjadi WebP maksimum 2000 px, dan memiliki thumbnail 720 px. PNG transparan dipangkas; kanvas putih luar papan Carnival dibuang tanpa menghapus putih di dalam desain. Mockup Mantra diputar menjadi portrait. Video dikonversi ke MP4 H.264/AAC dengan faststart. Cache hash di `src/data/media-manifest.json` menghindari konversi ulang file yang sama.
+
+Dua reel Mantra disimpan di `Asset/Graphic_Design/mantra talks/reels` sebagai mantra-talks-reel-01.mp4 dan mantra-talks-reel-02.mp4. Versi web lokal dapat diputar tanpa login Instagram; tautan posting aslinya tetap tersedia.
+
+`assets:prepare` dan `videos:prepare` adalah script lama untuk aset hero/kursor dan dua video Carnival. Gunakan `portfolio:prepare` untuk seluruh koleksi proyek terbaru.
+
+## Pemeriksaan sebelum push
+
+Periksa beranda dan detail proyek di desktop/HP, filter, galeri keyboard, semua video, serta informasi kontak. Laporan QC terakhir dan batas verifikasinya ada di docs/QC-2026-11-04.md.
+
+Kursor menggunakan PNG transparan sRGB 32×32, hotspot 16,16 dan fallback sistem. Mouse/trackpad memakai kursor khusus; input teks tetap memakai kursor teks. Pengujian langsung Safari/macOS tetap memerlukan perangkat Mac. Nomor 0177340593 dipertahankan sesuai data klien; format internasional belum dikonfirmasi.
+
+```powershell
+git push origin main
+```
+
+Push ke branch yang terhubung akan memicu build Vercel. Folder dist tidak perlu dimasukkan Git.

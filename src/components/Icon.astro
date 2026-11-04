@@ -1,0 +1,25 @@
+---
+type Props = { name: string; size?: number; class?: string };
+const { name, size = 24, class: className = '' } = Astro.props;
+const paths: Record<string, string[]> = {
+  arrow: ['M5 12h14', 'm13 6 6 6-6 6'],
+  external: ['M7 17 17 7', 'M7 7h10v10'],
+  down: ['M12 4v16', 'm6 14 6 6 6-6'],
+  email: ['M3 6h18v12H3z', 'm3 6 9 7 9-7'],
+  phone: ['M6 3h4l2 5-3 2c1.3 2.7 2.3 3.7 5 5l2-3 5 2v4c0 2-2 3-4 3C9 20 4 15 3 7c0-2 1-4 3-4Z'],
+  marketing: ['m3 10 12-5v14L3 14z', 'M15 9h3a3 3 0 0 1 0 6h-3', 'm5 15 2 6h4l-2-5', 'M19 3v2m2 3 2-1m-2 11 2 1'],
+  social: ['M4 4h16v12H9l-5 4z', 'M8 8h8', 'M8 12h5'],
+  design: ['m4 20 3-10L17 3l4 4-7 10-10 3Z', 'm7 10 7 7', 'm17 3 4 4', 'M4 20l6-6'],
+  eye: ['M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z', 'M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z'],
+  share: ['m14 3 7 7-7 7v-5C8 12 5 15 3 20 2 10 6 7 14 7z'],
+  play: ['m9 5 11 7-11 7z'],
+  pause: ['M8 5v14', 'M16 5v14'],
+  close: ['m6 6 12 12', 'M18 6 6 18'],
+  expand: ['M8 3H3v5', 'M16 3h5v5', 'M3 16v5h5', 'M21 16v5h-5'],
+  previous: ['m15 5-7 7 7 7'],
+  next: ['m9 5 7 7-7 7'],
+};
+---
+<svg class={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  {name === 'linkedin' ? <><rect x="2" y="2" width="20" height="20" rx="3" fill="currentColor" stroke="none" /><path d="M6 10h3v8H6zM6 6h3v3H6zm5 4h3v1c.5-.8 1.4-1.3 2.5-1.3 2 0 3.5 1.2 3.5 4V18h-3v-4c0-1.1-.4-1.7-1.3-1.7s-1.7.6-1.7 1.8V18h-3z" fill="var(--icon-inverse, #4d2a0a)" stroke="none" /></> : name === 'instagram' ? <><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".7" fill="currentColor" /></> : paths[name]?.map(d => <path d={d} />)}
+</svg>

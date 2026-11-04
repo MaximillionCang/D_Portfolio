@@ -1,0 +1,43 @@
+---
+import Icon from './Icon.astro';
+---
+<dialog class="media-viewer" aria-label="Image viewer">
+  <div class="viewer-toolbar"><span class="viewer-count" aria-live="polite"></span><button class="viewer-close button button-secondary" type="button">Close <Icon name="close" size={19} /></button></div>
+  <div class="viewer-body"><button class="viewer-previous viewer-control" type="button" aria-label="Previous image"><Icon name="previous" size={27} /></button><div class="viewer-canvas"><p class="viewer-loading" role="status">Loading image…</p><img class="viewer-image" alt="" /><p class="viewer-error" hidden>Image couldn’t load. <a class="viewer-original" href="" target="_blank" rel="noopener">Open the image</a></p></div><button class="viewer-next viewer-control" type="button" aria-label="Next image"><Icon name="next" size={27} /></button></div>
+  <p class="viewer-caption"></p>
+</dialog>
+<script>
+  const viewer = document.querySelector<HTMLDialogElement>('.media-viewer');
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-lightbox]')];
+  const image = viewer?.querySelector<HTMLImageElement>('.viewer-image');
+  const loading = viewer?.querySelector<HTMLElement>('.viewer-loading');
+  const error = viewer?.querySelector<HTMLElement>('.viewer-error');
+  let current = 0;
+  let origin: HTMLElement | null = null;
+  function show(index: number) {
+    if (!viewer || !image || !links.length) return;
+    current = (index + links.length) % links.length;
+    const link = links[current];
+    image.alt = link.querySelector('img')?.alt ?? '';
+    image.src = link.href;
+    const original = viewer.querySelector<HTMLAnchorElement>('.viewer-original');
+    if (original) original.href = link.href;
+    if (loading) loading.hidden = false;
+    if (error) error.hidden = true;
+    image.hidden = true;
+    viewer.querySelector('.viewer-count')!.textContent = `${current + 1} / ${links.length}`;
+    viewer.querySelector('.viewer-caption')!.textContent = link.dataset.caption ?? '';
+  }
+  image?.addEventListener('load', () => { image.hidden = false; if (loading) loading.hidden = true; });
+  image?.addEventListener('error', () => { if (loading) loading.hidden = true; if (error) error.hidden = false; });
+  links.forEach((link, index) => link.addEventListener('click', event => {
+    if (!viewer || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault(); origin = link; show(index); viewer.showModal(); document.body.classList.add('viewer-open');
+  }));
+  viewer?.querySelector('.viewer-close')?.addEventListener('click', () => viewer.close());
+  viewer?.querySelector('.viewer-previous')?.addEventListener('click', () => show(current - 1));
+  viewer?.querySelector('.viewer-next')?.addEventListener('click', () => show(current + 1));
+  viewer?.addEventListener('keydown', event => { if (event.key === 'ArrowLeft') { event.preventDefault(); show(current - 1); } if (event.key === 'ArrowRight') { event.preventDefault(); show(current + 1); } });
+  viewer?.addEventListener('click', event => { if (event.target === viewer) viewer.close(); });
+  viewer?.addEventListener('close', () => { document.body.classList.remove('viewer-open'); origin?.focus(); });
+</script>

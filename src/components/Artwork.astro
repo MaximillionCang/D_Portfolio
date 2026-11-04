@@ -1,0 +1,13 @@
+---
+import type { ProjectMedia } from '../data/projects';
+import Icon from './Icon.astro';
+type Props = { media: ProjectMedia; priority?: boolean; class?: string };
+const { media, priority = false, class: className = '' } = Astro.props;
+---
+<figure class={`artwork ${className}`}>
+  <a class="image-button" href={media.image.src} data-lightbox data-caption={media.caption ?? media.alt} aria-label={`View full image: ${media.alt}`}>
+    <img src={priority ? media.image.src : media.thumbnail.src} srcset={media.thumbnail.width < media.image.width ? `${media.thumbnail.src} ${media.thumbnail.width}w, ${media.image.src} ${media.image.width}w` : undefined} sizes="(min-width: 1000px) 46vw, 90vw" width={media.image.width} height={media.image.height} alt={media.alt} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} />
+    <span class="image-open"><Icon name="expand" size={17} /><span>View full image</span></span>
+  </a>
+  {media.caption && <figcaption>{media.caption}</figcaption>}
+</figure>
