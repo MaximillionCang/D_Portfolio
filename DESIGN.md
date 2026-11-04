@@ -20,7 +20,7 @@ The About background is a mix of the two supplied light neutrals to preserve suf
 - About: only Darren is blue in the greeting. Short factual student bio, three recognizable discipline icons with labels, seven self-rated software rings. A ring is a value indicator, not decoration.
 - Work: one featured project, three-column art-led grid on desktop, responsive two/single columns, a wide photography collection. Remove repeated project numbers, card summaries and decorative mini labels. Each card has an explicit View project action.
 - Detail: project artwork, short paragraphs, role and software facts, expandable image gallery, native video players in phone/tablet frames.
-- Footer: short invitation plus clearly labelled Email, Phone and LinkedIn links with identifying icons.
+- Footer: email and phone number are plain text with identifying icons. Separate Call and WhatsApp actions sit below the number; LinkedIn is a filled pale-yellow View profile button. Only actionable elements have button treatment.
 
 ## Interaction
 
