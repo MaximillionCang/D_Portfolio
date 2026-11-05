@@ -10,6 +10,8 @@ Blue #4B86B0; light blue #C6D8E6; mist #F4F5F9; pale yellow #F8F5B0; brown #4D2A
 
 Only Darren is blue in the greeting. The final-year student bio appears once, in a pale-yellow speech bubble beside the laptop mascot on the right. What I do uses unframed icons, larger type and ruled columns, becoming readable rows on mobile. Original application logos replace rating rings and letter placeholders.
 
+The greeting no longer has a forced line break. Its desktop font follows the available column width, using one continuous line to occupy the previous central gap. The note uses a bounded 450 px column rather than half the entire page. The compact top row brings What I do closer; smaller screens stack the note below, and the short name phrase stays together when the greeting wraps naturally. No filler copy or decoration is added.
+
 Tools use two desktop rows: four design/photo applications followed by three motion/video applications. Larger names sit beside the original logos; subtle rules organize the list without adding boxes. On phones, two columns place each logo above its name and the final item spans the row. Content determines the blue section’s height, with no added spacer. Visible meters show the original personal scores, using a common bar length at each breakpoint for comparison. Text labels remain Advanced (client score 9) and Proficient (7.5 or 8), with exact values in the native accessible meters. These are personal assessments, not certifications.
 
 ## Page width

@@ -1,8 +1,11 @@
 .about-band { background: var(--about-surface); padding-block: 52px 44px; }
-.about-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
-.about-intro h2 { font: 400 clamp(3.7rem, 6.7vw, 6.1rem)/.94 var(--serif); letter-spacing: -.045em; }
+.about-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 450px); gap: clamp(28px, 3vw, 72px); align-items: center; }
+.about-intro { min-width: 0; container-type: inline-size; }
+.about-intro h2 { font: 400 clamp(3.7rem, 7vw, 12.5rem)/.98 var(--serif); letter-spacing: -.045em; text-wrap: balance; }
+@supports (font-size: 1cqi) { .about-intro h2 { font-size: clamp(3.7rem, 12cqi, 12.5rem); } }
+.about-name { display: inline-block; }
 .about-intro h2 em { color: var(--blue); font-weight: 400; }
-.about-note { position: relative; display: flex; justify-content: flex-end; align-items: center; min-height: 190px; padding: 8px 94px 26px 0; }
+.about-note { position: relative; display: flex; justify-content: flex-end; align-items: center; min-height: 155px; padding: 8px 94px 20px 0; }
 .about-bubble { position: relative; max-width: 355px; padding: 21px 23px; background: var(--yellow); border: 1px solid var(--brown); border-radius: 16px; font-size: 1.04rem; line-height: 1.6; }
 .about-bubble::after { content: ''; position: absolute; right: -7px; bottom: 25px; width: 13px; height: 13px; background: var(--yellow); border-top: 1px solid var(--brown); border-right: 1px solid var(--brown); transform: rotate(45deg); }
 .laptop-friend { position: absolute; width: 105px; right: -4px; bottom: 0; }
@@ -53,7 +56,8 @@
 .skill-meter::-webkit-meter-optimum-value { background: var(--blue); border-radius: 0; }
 .skill-meter::-moz-meter-bar { background: var(--blue); border-radius: 0; }
 @media (max-width: 1000px) {
-  .about-content { gap: 32px; }
+  .about-content { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .about-note { width: min(100%, 475px); justify-self: end; }
   .skills-list { column-gap: 26px; }
   .skill-item:nth-child(n) { grid-column: span 4; }
   .skill-copy strong { font-size: 1.04rem; }

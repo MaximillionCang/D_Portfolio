@@ -30,3 +30,12 @@ Scope: restore visual proficiency, use more desktop width, replace the difficult
 - Craftsmanship and quality locks PASS for checked scope: exact rating data is preserved, frame/width changes reuse shared styles, slider endpoints and filter states work, and no new generic copy or decorative card system is introduced.
 
 Limits: Chromium on Windows and responsive viewports were checked. Actual iPhone/Safari/macOS hardware was not tested. Video playback was previously verified; this revision checks preserved player behavior and frame layout, not every video from beginning to end. No Lighthouse or Web Vitals numbers are claimed. No push or deployment was performed.
+
+## Follow-up: compact About greeting
+
+The client identified the central gap between the two-line greeting and the right-hand mascot. The forced break was removed, the note column bounded, and the greeting font made relative to its available column. The top row’s minimum height was reduced from 190 to 155 px. Smaller screens stack the note beneath the greeting rather than forcing everything into one row.
+
+- Responsive bounds PASS: at 320, 390, 760, 820, 1000, 1024, 1440, 1920 and 2560 px there is no document or heading overflow; the bubble and mascot stay within the viewport and do not overlap the heading.
+- Heading composition PASS: the greeting occupies one line from the checked tablet width of 760 px through 2560 px; at 320 and 390 it wraps to two readable lines. Desktop and phone screenshots were reviewed.
+- Build/type checks PASS: 13 static routes generated and npx tsc --noEmit completed. Browser warning/error log is empty.
+- Delivery gate PASS for this CSS/markup scope: shared palette, fonts, original assets, accessible heading text and existing controls are preserved; no new claim, navigation, motion or dependency is added. The change directly addresses unused space, with its purpose recorded in DESIGN.md. Existing Energy 2 / Rhythm 3 / Motion 2 direction remains.
