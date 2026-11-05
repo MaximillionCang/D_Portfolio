@@ -15,9 +15,11 @@ import Icon from './Icon.astro';
   <div class="empty-projects" id="empty-projects" hidden><h3>More to come.</h3><p>This collection is still growing. Try another category.</p><button class="button button-secondary" type="button" id="show-all">Show all projects <Icon name="arrow" size={18} /></button></div>
 </section>
 <script>
+  import { attachRailWind } from '../scripts/rail-wind';
   const track = document.querySelector<HTMLElement>('.work-track');
   const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-filter]')];
   const cards = [...document.querySelectorAll<HTMLElement>('.project-card')];
+  const wind = track ? attachRailWind(track, cards) : undefined;
   const previous = document.querySelector<HTMLButtonElement>('[data-direction="previous"]');
   const next = document.querySelector<HTMLButtonElement>('[data-direction="next"]');
   const visibleCards = () => cards.filter(card => !card.hidden);
@@ -46,6 +48,7 @@ import Icon from './Icon.astro';
     const status = document.querySelector('#filter-status');
     if (status) status.textContent = `${count} ${count === 1 ? 'project' : 'projects'} shown`;
     track?.scrollTo({ left: 0, behavior: 'instant' });
+    wind?.reset();
     requestAnimationFrame(updateControls);
   }
   filters.forEach(button => button.addEventListener('click', () => filterProjects(button.dataset.filter!)));

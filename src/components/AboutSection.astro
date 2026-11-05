@@ -3,6 +3,15 @@ import '../styles/about.css';
 import Icon from './Icon.astro';
 import { software } from '../data/skills';
 import laptopFriend from '../assets/laptop-friend.webp';
+const tools = [
+  software.illustrator,
+  software.photoshop,
+  software.canva,
+  software.lightroom,
+  software.afterEffects,
+  software.premiere,
+  software.capcut,
+];
 const disciplines = [{ name: 'Marketing', icon: 'marketing' }, { name: 'Social Media', icon: 'social' }, { name: 'Graphic Design', icon: 'design' }];
 ---
 <section class="about-band" id="about" aria-labelledby="about-title"><div class="section-wrap">
@@ -14,5 +23,21 @@ const disciplines = [{ name: 'Marketing', icon: 'marketing' }, { name: 'Social M
     <div class="discipline-heading"><h3>What I do</h3><a class="button button-secondary" href="#work">See my work <Icon name="arrow" size={19} /></a></div>
     <div class="disciplines">{disciplines.map(item => <div class="discipline"><Icon name={item.icon} size={29} /><strong>{item.name}</strong></div>)}</div>
   </div>
-  <div class="skills-section"><h3>Tools I work with</h3><div class="skills-list">{Object.values(software).map(item => <div class="skill-item"><img class="tool-logo" src={item.icon} width="56" height="56" alt="" aria-hidden="true" loading="lazy" /><strong>{item.name}</strong><span>{item.rating}/10</span><meter class="sr-only" min="0" max="10" value={item.rating} aria-label={`${item.name}, self-rated proficiency`}>{item.rating} out of 10</meter></div>)}</div></div>
+  <div class="skills-section">
+    <h3>Tools I work with</h3>
+    <div class="skills-list">
+      {tools.map(item => (
+        <div class="skill-item">
+          <img class="tool-logo" src={item.icon} width="64" height="64" alt="" aria-hidden="true" loading="lazy" />
+          <div class="skill-copy">
+            <strong>{item.name}</strong>
+            <span class="skill-level">{item.rating >= 9 ? 'Advanced' : 'Proficient'}</span>
+          </div>
+          <meter class="sr-only" min="0" max="10" value={item.rating} aria-label={`${item.name}, self-rated proficiency`}>
+            {item.rating} out of 10
+          </meter>
+        </div>
+      ))}
+    </div>
+  </div>
 </div></section>
