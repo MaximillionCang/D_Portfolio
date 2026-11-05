@@ -3,9 +3,10 @@ import type { ProjectVideo } from '../data/projects';
 import Icon from './Icon.astro';
 type Props = { video: ProjectVideo };
 const { video } = Astro.props;
+const { width, height } = video.poster;
 ---
 <figure class={`motion-card motion-${video.orientation}`}>
-  <div class={`device-frame ${video.orientation === 'portrait' ? 'device-phone' : 'device-tablet'}`}><div class="device-screen"><video controls playsinline preload="none" poster={video.poster.src} width={video.orientation === 'portrait' ? 720 : 1280} height={video.orientation === 'portrait' ? 1280 : 720} aria-label={video.title}><source src={video.src} type="video/mp4" />Your browser does not support video. <a href={video.src}>Open video</a></video></div></div>
+  <div class={`device-frame ${video.orientation === 'portrait' ? 'device-phone' : 'device-tablet'}`} style={`--video-ratio: ${width} / ${height}`}><div class="device-screen"><video controls playsinline preload="none" poster={video.poster.src} width={width} height={height} aria-label={video.title}><source src={video.src} type="video/mp4" />Your browser does not support video. <a href={video.src}>Open video</a></video></div></div>
   <figcaption>{video.title}</figcaption>
   {video.externalUrl && <a class="button button-secondary instagram-link" href={video.externalUrl} target="_blank" rel="noopener noreferrer"><Icon name="instagram" size={19} />View on Instagram <Icon name="external" size={17} /></a>}
   <p class="video-error" hidden>The video couldn’t load. <a href={video.src} class="text-action">Open video</a></p>

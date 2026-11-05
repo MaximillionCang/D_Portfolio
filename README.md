@@ -33,7 +33,7 @@ Run `npm run build` before `npm run preview`. Media preparation is only needed w
 - Filters for Graphic Design, Social media content, Illustration and Photography.
 - Individual project pages with descriptions, contributions, software, images and native video players.
 - An image viewer with previous/next navigation, a close control and keyboard support.
-- Portrait videos in iPhone-style frames with a notch; landscape videos use tablet frames. Related portrait reels share one desktop row and scroll horizontally on smaller screens.
+- Portrait videos in iPhone-style frames with a notch; landscape videos use tablet frames. Each frame follows its video’s own aspect ratio without added white space. Related portrait reels share one desktop row and scroll horizontally on smaller screens.
 - Plain-text email and phone details, plus a LinkedIn profile link. There is no contact form or email delivery service.
 
 ## Project structure

@@ -59,3 +59,16 @@ The client requested a small rightward adjustment to the hero character. A share
 - Responsive check PASS: 390, 760, 1000, 1001, 1024, 1440, 1920 and 2560 px have no document overflow, off-screen mascot/bubble or mascot/headline overlap. The desktop preview was visually reviewed.
 - Build PASS: 13 static pages generated. This CSS-only change adds no logic or dependency.
 - Delivery gate PASS for this scope: original assets, palette, typography, animation and controls remain; the adjustment has a documented composition purpose and preserves mobile bounds. No unsupported claim or new interactive element is introduced.
+
+## Follow-up: fit every video frame
+
+The client requested removal of white space inside all video frames. Fixed 9:16/16:9 screen ratios and the phone’s 24 px top strip were removed. Initial player dimensions now follow the prepared poster, while native intrinsic video dimensions take over after metadata loads. The screen wraps the player at auto height, preserving the full video ratio and native controls. The notch remains attached to the top bezel.
+
+- Asset dimensions PASS: the nine MP4 track headers were inspected without modifying media. Formats include 1280×720, 720×1280, 360×640, the shorter 720×912 Carnival clip and the taller 720×1566 Story recording.
+- All nine frames PASS: browser checks across Tutorising, Mantra, Carnival and Sportlight show video/screen bounds matching within one pixel and screen padding of 0 px. Controls remain enabled and autoplay remains off.
+- Playback PASS for checked examples: the Story recording plays with intrinsic size 720×1566; Sportlight plays at 1280×720. The latter’s rendered ratio becomes 1.7777778 when metadata loads, and the surrounding screen follows it. Neither player reports a media error.
+- Responsive check PASS: Tutorising’s portrait row and Sportlight’s landscape player remain in bounds at 390 px; Tutorising also has no document overflow at 320 px. Desktop and phone screenshots were reviewed. No warning/error entries were recorded.
+- Build/type checks PASS: 13 static pages generated and npx tsc --noEmit completed.
+- Delivery gate PASS for this scope: original media, palette and accessible native player controls are retained; aspect ratios reserve space before playback; no new dependency, graphic asset or fabricated claim is introduced. The shared component applies the fix to every project video. The documented purpose is to fit real media rather than add decorative letterboxing.
+
+This follow-up supersedes the earlier reserved phone-status-strip design. Browser checks use Chromium on Windows; actual Safari/macOS/iPhone testing remains outstanding. Original video content, including any recorded status bars or artwork inside a clip, is retained. No push or deployment was performed.

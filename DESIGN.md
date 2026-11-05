@@ -42,7 +42,9 @@ Scrolling gives the hanging artwork a small directional sway, making the client�
 
 Project facts, original images, galleries and native videos remain available. Digital Print Production keeps its paired images above the story. Mantra Talks has three locally playable reels and links to the supplied originals. Sportlight’s engagement values are client-supplied static numbers.
 
-Multiple portrait videos share a single desktop row; smaller screens use an explicitly scrollable row rather than tiny videos. The shared phone frame has rounded corners, a top-attached notch and an earpiece, referencing iPhones before Dynamic Island. A reserved top strip keeps the notch away from video content and native controls. Frame colors use the portfolio palette. The existing Mantra image mockup already has the earlier iPhone notch and is preserved.
+Multiple portrait videos share a single desktop row; smaller screens use an explicitly scrollable row rather than tiny videos. The shared phone frame has rounded corners, a top-attached notch and an earpiece, referencing iPhones before Dynamic Island. The notch sits over the screen rather than introducing a blank status strip. Frame colors use the portfolio palette. The existing Mantra image mockup already has the earlier iPhone notch and is preserved.
+
+Every video frame follows its media rather than enforcing 9:16 or 16:9. Prepared poster dimensions reserve the initial ratio; once metadata loads, the native video’s intrinsic ratio takes precedence. The screen wraps the auto-height player without padding or a separate fixed aspect ratio, so a tall Story recording and a shorter portrait clip both fit their frames. No white letterboxing, crop-to-fill behavior or video re-encoding is added.
 
 Email and phone remain plain text. LinkedIn matches the contact-row layout: its icon, a LinkedIn label and the name Darren Ryusa as a plain profile link, with no boxed button.
 

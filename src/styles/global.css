@@ -157,10 +157,9 @@ button:active, a:active { transform: translateY(1px); }
 .device-phone { max-width: 315px; padding: 9px; border: 3px solid var(--brown); border-radius: 38px; background: var(--brown); }
 .device-phone::before { content: ''; position: absolute; z-index: 1; width: 42%; height: 22px; border-radius: 0 0 15px 15px; background: var(--brown); top: 8px; left: 29%; pointer-events: none; }
 .device-phone::after { content: ''; position: absolute; z-index: 2; width: 16%; height: 3px; border-radius: 3px; background: var(--blue-light); top: 14px; left: 42%; pointer-events: none; }
-.device-screen { overflow: hidden; border-radius: 12px; background: var(--yellow); aspect-ratio: 16 / 9; }
-.device-phone .device-screen { aspect-ratio: 9 / 16; border-radius: 26px; padding-top: 24px; background: var(--paper); }
-.device-phone .device-screen video { background: var(--paper); }
-.device-screen video { width: 100%; height: 100%; object-fit: contain; background: var(--yellow); }
+.device-screen { overflow: hidden; border-radius: 12px; background: var(--brown); }
+.device-phone .device-screen { border-radius: 26px; }
+.device-screen video { display: block; width: 100%; height: auto; aspect-ratio: auto var(--video-ratio); object-fit: contain; background: var(--brown); }
 .single-video { grid-template-columns: minmax(0, 960px); justify-content: center; }
 .portrait-videos { grid-template-columns: repeat(var(--video-count), minmax(0, 1fr)); gap: clamp(20px, 4vw, 72px); }
 .instagram-link { display: flex; margin: 12px auto 0; font-size: .82rem; padding-inline: 12px; }
