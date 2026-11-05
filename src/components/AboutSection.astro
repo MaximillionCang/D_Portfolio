@@ -32,10 +32,10 @@ const disciplines = [{ name: 'Marketing', icon: 'marketing' }, { name: 'Social M
           <div class="skill-copy">
             <strong>{item.name}</strong>
             <span class="skill-level">{item.rating >= 9 ? 'Advanced' : 'Proficient'}</span>
+            <meter class="skill-meter" min="0" max="10" value={item.rating} aria-label={`${item.name}, self-rated proficiency`}>
+              {item.rating} out of 10
+            </meter>
           </div>
-          <meter class="sr-only" min="0" max="10" value={item.rating} aria-label={`${item.name}, self-rated proficiency`}>
-            {item.rating} out of 10
-          </meter>
         </div>
       ))}
     </div>

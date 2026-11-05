@@ -37,6 +37,7 @@
   display: grid;
   gap: 5px;
   min-width: 0;
+  flex: 1;
 }
 .skill-copy strong {
   font-size: 1.12rem;
@@ -47,6 +48,10 @@
   font-size: .94rem;
   line-height: 1.4;
 }
+.skill-meter { display: block; width: 100%; max-width: clamp(100px, 12vw, 240px); height: 12px; margin-top: 5px; appearance: none; -webkit-appearance: none; background: var(--paper); border: 1px solid var(--brown); border-radius: 3px; overflow: hidden; }
+.skill-meter::-webkit-meter-bar { height: 10px; background: var(--paper); border: 0; border-radius: 0; box-shadow: none; }
+.skill-meter::-webkit-meter-optimum-value { background: var(--blue); border-radius: 0; }
+.skill-meter::-moz-meter-bar { background: var(--blue); border-radius: 0; }
 @media (max-width: 1000px) {
   .about-content { gap: 32px; }
   .skills-list { column-gap: 26px; }
@@ -87,9 +92,12 @@
   .tool-logo { width: 56px; height: 56px; }
   .skill-copy strong { font-size: 1rem; }
   .skill-level { font-size: .9rem; }
+  .skill-copy { width: 100%; }
+  .skill-meter { max-width: none; }
   .skill-item:last-child {
     grid-column: 1 / -1;
     flex-direction: row;
     align-items: center;
   }
+  .skill-item:last-child .skill-copy { max-width: calc((100% - 22px) / 2); }
 }

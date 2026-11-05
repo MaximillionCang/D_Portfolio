@@ -32,7 +32,9 @@ Font: Instrument Serif, DM Sans, Space Mono. Palet tampilan: #4B86B0, #C6D8E6, #
 
 Galeri beranda memakai pajangan bertali dengan kartu 3:2, tombol panah dan swipe horizontal. Komponen About berada di src/components/AboutSection.astro; galeri di src/components/ProjectRail.astro, dengan stylesheet terpisah. Logo aplikasi asli disimpan di public/software; sumber dan hash file tercatat di docs/SOFTWARE_LOGO_SOURCES.json.
 
-Kartu karya berayun mengikuti arah geseran melalui src/scripts/rail-wind.ts. Ayunan mereda setelah berhenti, tidak berjalan saat halaman tersembunyi, dan dinonaktifkan untuk reduced motion. Tools ditata dalam dua baris desktop dengan nama lebih besar; HP memakai dua kolom. Label Advanced atau Proficient menggantikan angka pada tampilan.
+Kartu karya berayun mengikuti arah geseran melalui src/scripts/rail-wind.ts. Ayunan mereda setelah berhenti, tidak berjalan saat halaman tersembunyi, dan dinonaktifkan untuk reduced motion. Penggeser native dengan handle lebih besar menggantikan scrollbar tipis; posisi paling kanan mencapai proyek terakhir tanpa snap yang melawan gerakan mouse. Tools memakai dua baris desktop dan dua kolom HP, dengan logo asli, nama besar, label Advanced/Proficient serta bar visual sesuai nilai pribadi klien.
+
+Lebar halaman bersama maksimum 2240 px dengan jarak tepi 20–72 px; header dan footer mengikuti perataan yang sama. Tiga reel Mantra berjajar satu baris pada desktop dan bisa digeser mendatar pada HP. Semua bingkai video portrait memakai gaya iPhone dengan notch sebelum Dynamic Island; kontrol video tetap native dan tidak autoplay.
 
 ## Mengubah konten
 
@@ -64,7 +66,7 @@ Tiga reel Mantra disimpan di `Asset/Graphic_Design/mantra talks/reels` sebagai m
 
 ## Pemeriksaan sebelum push
 
-Periksa beranda dan detail proyek di desktop/HP, filter, galeri keyboard, semua video, serta informasi kontak. Laporan QC terakhir dan batas verifikasinya ada di docs/QC-2026-11-05.md.
+Periksa beranda dan detail proyek di desktop/HP, filter, galeri keyboard, semua video, serta informasi kontak. QC utama ada di docs/QC-2026-11-05.md; revisi meter, lebar halaman, penggeser dan bingkai iPhone dicatat di docs/QC-2026-11-05-layout-controls.md.
 
 Kursor menggunakan PNG transparan sRGB 32×32, hotspot 16,16 dan fallback sistem. Mouse/trackpad memakai kursor khusus; input teks tetap memakai kursor teks. Pengujian langsung Safari/macOS tetap memerlukan perangkat Mac. Nomor lokal 0177340593 ditampilkan sebagai teks dengan ikon telepon tanpa tombol atau tautan. Kode negara Malaysia +60 sudah dikonfirmasi.
 

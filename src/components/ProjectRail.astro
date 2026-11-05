@@ -12,6 +12,7 @@ import Icon from './Icon.astro';
   </div>
   <p class="sr-only" id="filter-status" aria-live="polite">{projects.length} projects shown</p>
   <div class="studio-rail"><div class="work-track" id="project-grid" role="region" aria-roledescription="carousel" aria-label="Project display, use the arrow buttons or swipe to browse" tabindex="0">{projects.map((project, index) => <ProjectCard project={project} index={index} />)}</div></div>
+  <input class="rail-scrubber" type="range" min="0" max="1000" step="1" value="0" aria-label="Browse all projects" aria-controls="project-grid" hidden />
   <div class="empty-projects" id="empty-projects" hidden><h3>More to come.</h3><p>This collection is still growing. Try another category.</p><button class="button button-secondary" type="button" id="show-all">Show all projects <Icon name="arrow" size={18} /></button></div>
 </section>
 <script>
@@ -22,11 +23,21 @@ import Icon from './Icon.astro';
   const wind = track ? attachRailWind(track, cards) : undefined;
   const previous = document.querySelector<HTMLButtonElement>('[data-direction="previous"]');
   const next = document.querySelector<HTMLButtonElement>('[data-direction="next"]');
+  const scrubber = document.querySelector<HTMLInputElement>('.rail-scrubber');
   const visibleCards = () => cards.filter(card => !card.hidden);
   function updateControls() {
     if (!track || !previous || !next) return;
     previous.disabled = track.scrollLeft < 2;
     next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    if (scrubber) {
+      const maximum = Math.max(0, track.scrollWidth - track.clientWidth);
+      scrubber.value = String(maximum ? Math.round(track.scrollLeft / maximum * 1000) : 0);
+      scrubber.disabled = maximum < 2;
+      const bounds = track.getBoundingClientRect();
+      const visible = visibleCards();
+      const inView = visible.map((card, index) => ({ index, bounds: card.getBoundingClientRect() })).filter(item => item.bounds.right > bounds.left + 20 && item.bounds.left < bounds.right - 20);
+      scrubber.setAttribute('aria-valuetext', inView.length ? `Projects ${inView[0].index + 1} to ${inView[inView.length - 1].index + 1} of ${visible.length}` : 'No projects');
+    }
   }
   function move(direction: number, end?: boolean) {
     if (!track) return;
@@ -55,6 +66,14 @@ import Icon from './Icon.astro';
   document.querySelector('#show-all')?.addEventListener('click', () => filterProjects('All projects'));
   previous?.addEventListener('click', () => move(-1));
   next?.addEventListener('click', () => move(1));
+  if (track && scrubber) {
+    scrubber.hidden = false;
+    track.classList.add('has-scrubber');
+    scrubber.addEventListener('input', () => {
+      const maximum = Math.max(0, track.scrollWidth - track.clientWidth);
+      track.scrollTo({ left: Number(scrubber.value) / 1000 * maximum, behavior: 'instant' });
+    });
+  }
   track?.addEventListener('scroll', updateControls, { passive: true });
   track?.addEventListener('keydown', event => {
     if (event.target !== track) return;
