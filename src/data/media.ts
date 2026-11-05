@@ -99,30 +99,38 @@ import image48 from '../assets/portfolio/social-media-content-humas-img-4983-32f
 import thumb48 from '../assets/portfolio/social-media-content-humas-img-4983-32f6bf3-thumb.webp';
 import image49 from '../assets/portfolio/social-media-content-humas-img-4984-d3e067b.webp';
 import thumb49 from '../assets/portfolio/social-media-content-humas-img-4984-d3e067b-thumb.webp';
-import image50 from '../assets/portfolio/social-media-content-humas-feeds-imlek-bd5b120.webp';
-import thumb50 from '../assets/portfolio/social-media-content-humas-feeds-imlek-bd5b120-thumb.webp';
-import image51 from '../assets/portfolio/social-media-content-humas-feeds-jumat-agung-4adb259.webp';
-import thumb51 from '../assets/portfolio/social-media-content-humas-feeds-jumat-agung-4adb259-thumb.webp';
-import image52 from '../assets/portfolio/social-media-content-humas-laptop-humas-0096a5b.webp';
-import thumb52 from '../assets/portfolio/social-media-content-humas-laptop-humas-0096a5b-thumb.webp';
-import image53 from '../assets/portfolio/social-media-content-humas-majalah-1-2452cd4.webp';
-import thumb53 from '../assets/portfolio/social-media-content-humas-majalah-1-2452cd4-thumb.webp';
-import image54 from '../assets/portfolio/social-media-content-humas-majalah-2-8d7d390.webp';
-import thumb54 from '../assets/portfolio/social-media-content-humas-majalah-2-8d7d390-thumb.webp';
-import image55 from '../assets/portfolio/social-media-content-ppi-malaysia-by-darren-ryusa-10--4fbf2dd.webp';
-import thumb55 from '../assets/portfolio/social-media-content-ppi-malaysia-by-darren-ryusa-10--4fbf2dd-thumb.webp';
-import image56 from '../assets/portfolio/social-media-content-ppi-malaysia-by-darren-ryusa-11--da6f4f2.webp';
-import thumb56 from '../assets/portfolio/social-media-content-ppi-malaysia-by-darren-ryusa-11--da6f4f2-thumb.webp';
-import image57 from '../assets/portfolio/social-media-content-ppi-malaysia-whatsupnov-06-aaee451.webp';
-import thumb57 from '../assets/portfolio/social-media-content-ppi-malaysia-whatsupnov-06-aaee451-thumb.webp';
-import image58 from '../assets/portfolio/social-media-content-tutorising-img-4988-f9831c9.webp';
-import thumb58 from '../assets/portfolio/social-media-content-tutorising-img-4988-f9831c9-thumb.webp';
-import image59 from '../assets/portfolio/social-media-content-tutorising-img-4990-88fd76e.webp';
-import thumb59 from '../assets/portfolio/social-media-content-tutorising-img-4990-88fd76e-thumb.webp';
-import image60 from '../assets/portfolio/social-media-content-tutorising-img-4991-e3a55eb.webp';
-import thumb60 from '../assets/portfolio/social-media-content-tutorising-img-4991-e3a55eb-thumb.webp';
-import image61 from '../assets/portfolio/social-media-content-tutorising-img-4992-d9cd391.webp';
-import thumb61 from '../assets/portfolio/social-media-content-tutorising-img-4992-d9cd391-thumb.webp';
+import image50 from '../assets/portfolio/social-media-content-humas-logo-humas-d62d0d5.webp';
+import thumb50 from '../assets/portfolio/social-media-content-humas-logo-humas-d62d0d5-thumb.webp';
+import image51 from '../assets/portfolio/social-media-content-humas-feeds-imlek-bd5b120.webp';
+import thumb51 from '../assets/portfolio/social-media-content-humas-feeds-imlek-bd5b120-thumb.webp';
+import image52 from '../assets/portfolio/social-media-content-humas-feeds-jumat-agung-4adb259.webp';
+import thumb52 from '../assets/portfolio/social-media-content-humas-feeds-jumat-agung-4adb259-thumb.webp';
+import image53 from '../assets/portfolio/social-media-content-humas-laptop-humas-0096a5b.webp';
+import thumb53 from '../assets/portfolio/social-media-content-humas-laptop-humas-0096a5b-thumb.webp';
+import image54 from '../assets/portfolio/social-media-content-humas-majalah-1-2452cd4.webp';
+import thumb54 from '../assets/portfolio/social-media-content-humas-majalah-1-2452cd4-thumb.webp';
+import image55 from '../assets/portfolio/social-media-content-humas-majalah-2-8d7d390.webp';
+import thumb55 from '../assets/portfolio/social-media-content-humas-majalah-2-8d7d390-thumb.webp';
+import image56 from '../assets/portfolio/social-media-content-ppi-malaysia-img-7963-ddc24ab.webp';
+import thumb56 from '../assets/portfolio/social-media-content-ppi-malaysia-img-7963-ddc24ab-thumb.webp';
+import image57 from '../assets/portfolio/social-media-content-ppi-malaysia-by-darren-ryusa-10--4fbf2dd.webp';
+import thumb57 from '../assets/portfolio/social-media-content-ppi-malaysia-by-darren-ryusa-10--4fbf2dd-thumb.webp';
+import image58 from '../assets/portfolio/social-media-content-ppi-malaysia-by-darren-ryusa-11--da6f4f2.webp';
+import thumb58 from '../assets/portfolio/social-media-content-ppi-malaysia-by-darren-ryusa-11--da6f4f2-thumb.webp';
+import image59 from '../assets/portfolio/social-media-content-ppi-malaysia-whatsupnov-06-aaee451.webp';
+import thumb59 from '../assets/portfolio/social-media-content-ppi-malaysia-whatsupnov-06-aaee451-thumb.webp';
+import image60 from '../assets/portfolio/social-media-content-sportlight-logo-fix-plss-07-t-4--8b06599.webp';
+import thumb60 from '../assets/portfolio/social-media-content-sportlight-logo-fix-plss-07-t-4--8b06599-thumb.webp';
+import image61 from '../assets/portfolio/social-media-content-tutorising-img-4988-f9831c9.webp';
+import thumb61 from '../assets/portfolio/social-media-content-tutorising-img-4988-f9831c9-thumb.webp';
+import image62 from '../assets/portfolio/social-media-content-tutorising-img-4990-88fd76e.webp';
+import thumb62 from '../assets/portfolio/social-media-content-tutorising-img-4990-88fd76e-thumb.webp';
+import image63 from '../assets/portfolio/social-media-content-tutorising-img-4991-e3a55eb.webp';
+import thumb63 from '../assets/portfolio/social-media-content-tutorising-img-4991-e3a55eb-thumb.webp';
+import image64 from '../assets/portfolio/social-media-content-tutorising-img-4992-d9cd391.webp';
+import thumb64 from '../assets/portfolio/social-media-content-tutorising-img-4992-d9cd391-thumb.webp';
+import image65 from '../assets/portfolio/social-media-content-tutorising-screenshot-2026-11-04-at-10-35-21-pm-removebg-preview-0ff96b0.webp';
+import thumb65 from '../assets/portfolio/social-media-content-tutorising-screenshot-2026-11-04-at-10-35-21-pm-removebg-preview-0ff96b0-thumb.webp';
 
 export type PreparedMedia = { image: ImageMetadata; thumbnail: ImageMetadata; source: string };
 export const media: Record<string, PreparedMedia> = {
@@ -176,16 +184,20 @@ export const media: Record<string, PreparedMedia> = {
   "Photography/new.jpg": { image: image47, thumbnail: thumb47, source: "Photography/new.jpg" },
   "Social_Media_Content/humas/IMG_4983.PNG": { image: image48, thumbnail: thumb48, source: "Social_Media_Content/humas/IMG_4983.PNG" },
   "Social_Media_Content/humas/IMG_4984.PNG": { image: image49, thumbnail: thumb49, source: "Social_Media_Content/humas/IMG_4984.PNG" },
-  "Social_Media_Content/humas/feeds imlek.png": { image: image50, thumbnail: thumb50, source: "Social_Media_Content/humas/feeds imlek.png" },
-  "Social_Media_Content/humas/feeds jumat agung.png": { image: image51, thumbnail: thumb51, source: "Social_Media_Content/humas/feeds jumat agung.png" },
-  "Social_Media_Content/humas/laptop humas.png": { image: image52, thumbnail: thumb52, source: "Social_Media_Content/humas/laptop humas.png" },
-  "Social_Media_Content/humas/majalah 1.png": { image: image53, thumbnail: thumb53, source: "Social_Media_Content/humas/majalah 1.png" },
-  "Social_Media_Content/humas/majalah 2.png": { image: image54, thumbnail: thumb54, source: "Social_Media_Content/humas/majalah 2.png" },
-  "Social_Media_Content/ppi malaysia/by Darren Ryusa (10).png": { image: image55, thumbnail: thumb55, source: "Social_Media_Content/ppi malaysia/by Darren Ryusa (10).png" },
-  "Social_Media_Content/ppi malaysia/by Darren Ryusa (11).png": { image: image56, thumbnail: thumb56, source: "Social_Media_Content/ppi malaysia/by Darren Ryusa (11).png" },
-  "Social_Media_Content/ppi malaysia/whatsupnov-06.png": { image: image57, thumbnail: thumb57, source: "Social_Media_Content/ppi malaysia/whatsupnov-06.png" },
-  "Social_Media_Content/tutorising/IMG_4988.PNG": { image: image58, thumbnail: thumb58, source: "Social_Media_Content/tutorising/IMG_4988.PNG" },
-  "Social_Media_Content/tutorising/IMG_4990.PNG": { image: image59, thumbnail: thumb59, source: "Social_Media_Content/tutorising/IMG_4990.PNG" },
-  "Social_Media_Content/tutorising/IMG_4991.PNG": { image: image60, thumbnail: thumb60, source: "Social_Media_Content/tutorising/IMG_4991.PNG" },
-  "Social_Media_Content/tutorising/IMG_4992.PNG": { image: image61, thumbnail: thumb61, source: "Social_Media_Content/tutorising/IMG_4992.PNG" }
+  "Social_Media_Content/humas/Logo humas.png": { image: image50, thumbnail: thumb50, source: "Social_Media_Content/humas/Logo humas.png" },
+  "Social_Media_Content/humas/feeds imlek.png": { image: image51, thumbnail: thumb51, source: "Social_Media_Content/humas/feeds imlek.png" },
+  "Social_Media_Content/humas/feeds jumat agung.png": { image: image52, thumbnail: thumb52, source: "Social_Media_Content/humas/feeds jumat agung.png" },
+  "Social_Media_Content/humas/laptop humas.png": { image: image53, thumbnail: thumb53, source: "Social_Media_Content/humas/laptop humas.png" },
+  "Social_Media_Content/humas/majalah 1.png": { image: image54, thumbnail: thumb54, source: "Social_Media_Content/humas/majalah 1.png" },
+  "Social_Media_Content/humas/majalah 2.png": { image: image55, thumbnail: thumb55, source: "Social_Media_Content/humas/majalah 2.png" },
+  "Social_Media_Content/ppi malaysia/IMG_7963.png": { image: image56, thumbnail: thumb56, source: "Social_Media_Content/ppi malaysia/IMG_7963.png" },
+  "Social_Media_Content/ppi malaysia/by Darren Ryusa (10).png": { image: image57, thumbnail: thumb57, source: "Social_Media_Content/ppi malaysia/by Darren Ryusa (10).png" },
+  "Social_Media_Content/ppi malaysia/by Darren Ryusa (11).png": { image: image58, thumbnail: thumb58, source: "Social_Media_Content/ppi malaysia/by Darren Ryusa (11).png" },
+  "Social_Media_Content/ppi malaysia/whatsupnov-06.png": { image: image59, thumbnail: thumb59, source: "Social_Media_Content/ppi malaysia/whatsupnov-06.png" },
+  "Social_Media_Content/sportlight/LOGO FIX PLSS-07-T (4).png": { image: image60, thumbnail: thumb60, source: "Social_Media_Content/sportlight/LOGO FIX PLSS-07-T (4).png" },
+  "Social_Media_Content/tutorising/IMG_4988.PNG": { image: image61, thumbnail: thumb61, source: "Social_Media_Content/tutorising/IMG_4988.PNG" },
+  "Social_Media_Content/tutorising/IMG_4990.PNG": { image: image62, thumbnail: thumb62, source: "Social_Media_Content/tutorising/IMG_4990.PNG" },
+  "Social_Media_Content/tutorising/IMG_4991.PNG": { image: image63, thumbnail: thumb63, source: "Social_Media_Content/tutorising/IMG_4991.PNG" },
+  "Social_Media_Content/tutorising/IMG_4992.PNG": { image: image64, thumbnail: thumb64, source: "Social_Media_Content/tutorising/IMG_4992.PNG" },
+  "Social_Media_Content/tutorising/Screenshot_2026-11-04_at_10.35.21_PM-removebg-preview.png": { image: image65, thumbnail: thumb65, source: "Social_Media_Content/tutorising/Screenshot_2026-11-04_at_10.35.21_PM-removebg-preview.png" }
 };

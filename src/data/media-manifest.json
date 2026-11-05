@@ -299,6 +299,12 @@
     "height": 1168,
     "image": "social-media-content-humas-img-4984-d3e067b.webp"
   },
+  "Social_Media_Content/humas/Logo humas.png": {
+    "md5": "e7452dc4b2546bcc8d1dcf84570e545e",
+    "width": 500,
+    "height": 485,
+    "image": "social-media-content-humas-logo-humas-d62d0d5.webp"
+  },
   "Social_Media_Content/humas/feeds imlek.png": {
     "md5": "5fa3a30a2f1f7ed62a7973ed5d619178",
     "width": 2000,
@@ -329,6 +335,12 @@
     "height": 1208,
     "image": "social-media-content-humas-majalah-2-8d7d390.webp"
   },
+  "Social_Media_Content/ppi malaysia/IMG_7963.png": {
+    "md5": "808c58f872e43349eb2db39c056ee6f6",
+    "width": 1080,
+    "height": 1049,
+    "image": "social-media-content-ppi-malaysia-img-7963-ddc24ab.webp"
+  },
   "Social_Media_Content/ppi malaysia/by Darren Ryusa (10).png": {
     "md5": "045dbc7f577f5cb092ffe5f518a59aaa",
     "width": 1647,
@@ -346,6 +358,12 @@
     "width": 1600,
     "height": 2000,
     "image": "social-media-content-ppi-malaysia-whatsupnov-06-aaee451.webp"
+  },
+  "Social_Media_Content/sportlight/LOGO FIX PLSS-07-T (4).png": {
+    "md5": "9899c0e3d57e1076087f1b4d163165cf",
+    "width": 1117,
+    "height": 548,
+    "image": "social-media-content-sportlight-logo-fix-plss-07-t-4--8b06599.webp"
   },
   "Social_Media_Content/tutorising/IMG_4988.PNG": {
     "md5": "7ec4cbf5b1c7fb5376c49416468fbb54",
@@ -370,6 +388,12 @@
     "width": 1177,
     "height": 2000,
     "image": "social-media-content-tutorising-img-4992-d9cd391.webp"
+  },
+  "Social_Media_Content/tutorising/Screenshot_2026-11-04_at_10.35.21_PM-removebg-preview.png": {
+    "md5": "aaaaeecaa4720b903ff4640096ca7261",
+    "width": 475,
+    "height": 465,
+    "image": "social-media-content-tutorising-screenshot-2026-11-04-at-10-35-21-pm-removebg-preview-0ff96b0.webp"
   },
   "Graphic_Design/a carnival in every pop/IMG_6797.mov": {
     "md5": "dd9cb1159d70ab3ef78f665fb652e716",
@@ -417,6 +441,12 @@
     "md5": "f2d7f8b4905cab0d21fb360b614f9ca9",
     "output": "public/videos/mantra-talks-reel-02.mp4",
     "duration": 12.17,
+    "orientation": "portrait"
+  },
+  "Graphic_Design/mantra talks/reels/mantra-talks-reel-03.mp4": {
+    "md5": "389ceac7afbbceb679b05b73bec1b261",
+    "output": "public/videos/mantra-talks-reel-03.mp4",
+    "duration": 46,
     "orientation": "portrait"
   }
 }

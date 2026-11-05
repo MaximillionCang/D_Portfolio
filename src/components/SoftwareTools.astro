@@ -3,4 +3,4 @@ import { software, type SoftwareKey } from '../data/skills';
 type Props = { tools: SoftwareKey[] };
 const { tools } = Astro.props;
 ---
-<ul class="software-tools" aria-label="Software used">{tools.map(key => <li><span class="software-mark" aria-hidden="true">{software[key].mark}</span><span>{software[key].name}</span></li>)}</ul>
+<ul class="software-tools" aria-label="Software used">{tools.map(key => <li><img class="software-logo" src={software[key].icon} width="32" height="32" alt="" aria-hidden="true" loading="lazy" /><span>{software[key].name}</span></li>)}</ul>

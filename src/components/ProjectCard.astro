@@ -1,14 +1,16 @@
 ---
 import type { Project } from '../data/projects';
 import Icon from './Icon.astro';
-type Props = { project: Project };
-const { project } = Astro.props;
+type Props = { project: Project; index: number };
+const { project, index } = Astro.props;
+const tilt = [-1.1, .7, -.6, 1][index % 4];
 ---
-<article class={`project-card ${project.featured ? 'featured-card' : ''}`} data-category={project.category}>
+<article class="project-card" data-category={project.category} style={`--card-tilt: ${tilt}deg`}>
   <a class="project-link" href={`/work/${project.slug}/`} aria-label={`View ${project.title}`}>
-    <div class={`project-art tone-${project.tone} ${project.logo ? 'logo-art' : 'image-art'}`}>
-      <img src={project.card.thumbnail.src} srcset={project.card.thumbnail.width < project.card.image.width ? `${project.card.thumbnail.src} ${project.card.thumbnail.width}w, ${project.card.image.src} ${project.card.image.width}w` : undefined} sizes={project.featured ? '(min-width: 900px) 60vw, 90vw' : '(min-width: 1000px) 30vw, (min-width: 600px) 45vw, 90vw'} width={project.card.image.width} height={project.card.image.height} alt={project.card.alt} loading="lazy" />
+    <span class="project-peg" aria-hidden="true"></span>
+    <div class={`project-art tone-${project.tone} ${project.logo ? 'logo-art' : 'image-art'} ${project.category === 'Photography' ? 'photo-art' : ''}`}>
+      <img src={project.card.thumbnail.src} srcset={project.card.thumbnail.width < project.card.image.width ? `${project.card.thumbnail.src} ${project.card.thumbnail.width}w, ${project.card.image.src} ${project.card.image.width}w` : undefined} sizes="(min-width: 1000px) 380px, (min-width: 600px) 340px, 80vw" width={project.card.image.width} height={project.card.image.height} alt={project.card.alt} loading="lazy" />
     </div>
-    <div class="project-caption"><div><h3>{project.cardTitle ?? project.title}</h3>{project.featured && <p>{project.summary}</p>}</div><span class="project-action">View project <Icon name="arrow" size={19} /></span></div>
+    <div class="project-caption"><h3>{project.cardTitle ?? project.title}</h3><span class="project-action">View project <Icon name="arrow" size={19} /></span></div>
   </a>
 </article>

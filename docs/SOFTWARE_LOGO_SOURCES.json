@@ -1,0 +1,58 @@
+[
+  {
+    "application": "Adobe Illustrator",
+    "file": "public/software/illustrator.svg",
+    "sha256": "325b4dd225461135f9af1b40221ffb766bb7249abd9943ac115efa33c714acaf",
+    "source": "https://www.adobe.com/cc-shared/assets/img/product-icons/svg/illustrator.svg",
+    "retrieved": "2026-11-05",
+    "processing": "Original SVG bytes copied without recoloring, redrawing or shape changes."
+  },
+  {
+    "application": "Photoshop",
+    "file": "public/software/photoshop.svg",
+    "sha256": "bff66336f82ca0e6cb3bf2be80a2591d4e4ea4ce9d2171222982ac187968a779",
+    "source": "https://www.adobe.com/cc-shared/assets/img/product-icons/svg/photoshop-40.svg",
+    "retrieved": "2026-11-05",
+    "processing": "Original SVG bytes copied without recoloring, redrawing or shape changes."
+  },
+  {
+    "application": "Canva",
+    "file": "public/software/canva.svg",
+    "sha256": "49512b474d4df654125019c73231f171215ff6e4a3ae86e6fa47ce73d0e2b4b1",
+    "source": "https://www.canva.dev/assets/connect/Canva-logos.zip",
+    "retrieved": "2026-11-05",
+    "processing": "Original SVG bytes copied without recoloring, redrawing or shape changes."
+  },
+  {
+    "application": "After Effects",
+    "file": "public/software/after-effects.svg",
+    "sha256": "9aee5e1f2d29ff2ec30591fa1bf45b1b40319cec99405e2b5c86177629f6a5aa",
+    "source": "https://www.adobe.com/cc-shared/assets/img/product-icons/svg/after-effects-40.svg",
+    "retrieved": "2026-11-05",
+    "processing": "Original SVG bytes copied without recoloring, redrawing or shape changes."
+  },
+  {
+    "application": "Premiere Pro",
+    "file": "public/software/premiere.svg",
+    "sha256": "bb8a26c488d8ea444e88878b83faf35d7f7760ecff0a11410270e641b2b905ea",
+    "source": "https://www.adobe.com/cc-shared/assets/img/product-icons/svg/premiere-pro.svg",
+    "retrieved": "2026-11-05",
+    "processing": "Original SVG bytes copied without recoloring, redrawing or shape changes."
+  },
+  {
+    "application": "Lightroom",
+    "file": "public/software/lightroom.svg",
+    "sha256": "cbce6085e01ea9f164fff067898e1d138e1f264eb5d04ced7e3cfef33b8d797b",
+    "source": "https://www.adobe.com/cc-shared/assets/img/product-icons/svg/lightroom.svg",
+    "retrieved": "2026-11-05",
+    "processing": "Original SVG bytes copied without recoloring, redrawing or shape changes."
+  },
+  {
+    "application": "CapCut",
+    "file": "public/software/capcut.png",
+    "sha256": "604d92bc456393d85e1cb7d70eb4873b94eb70184122ca12955f33fc4f7ed80b",
+    "source": "https://sf16-web-tos-buz.capcutstatic.com/obj/capcut-web-buz-sg/common/images/lv_web-2.ico",
+    "retrieved": "2026-11-05",
+    "processing": "Lossless ICO image conversion to PNG; original icon geometry and colors retained."
+  }
+]

@@ -54,6 +54,7 @@ const videos = [
   ['Social_Media_Content/tutorising/v0f025gc0000cb97lvrc77u5knkt70j0.mp4', 'tutorising-orientation', 'portrait', 34.83],
   ['Graphic_Design/mantra talks/reels/mantra-talks-reel-01.mp4', 'mantra-talks-reel-01', 'portrait', 10.26],
   ['Graphic_Design/mantra talks/reels/mantra-talks-reel-02.mp4', 'mantra-talks-reel-02', 'portrait', 12.17],
+  ['Graphic_Design/mantra talks/reels/mantra-talks-reel-03.mp4', 'mantra-talks-reel-03', 'portrait', 46],
 ];
 const videoImports = [];
 const videoEntries = [];
@@ -64,7 +65,7 @@ for (let index = 0; index < videos.length; index++) {
   const output = `public/videos/${name}.mp4`;
   const poster = path.join(imagesOutput, `${name}-poster.webp`);
   if (previous[key]?.md5 !== md5 || !await exists(output) || !await exists(poster)) {
-    execFileSync(ffmpeg, ['-y', '-hide_banner', '-loglevel', 'error', '-i', input, '-vf', `scale=${orientation === 'landscape' ? 1280 : 720}:-2`, '-r', '30', '-c:v', 'libx264', '-preset', 'fast', '-crf', '24', '-pix_fmt', 'yuv420p', '-threads', '2', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', output], { stdio: 'inherit' });
+    execFileSync(ffmpeg, ['-y', '-hide_banner', '-loglevel', 'error', '-i', input, '-vf', `scale='min(${orientation === 'landscape' ? 1280 : 720},iw)':-2`, '-r', '30', '-c:v', 'libx264', '-preset', 'fast', '-crf', '24', '-pix_fmt', 'yuv420p', '-threads', '2', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', output], { stdio: 'inherit' });
     execFileSync(ffmpeg, ['-y', '-hide_banner', '-loglevel', 'error', '-ss', '1', '-i', output, '-frames:v', '1', '-vf', 'scale=720:-2', '-quality', '82', poster], { stdio: 'inherit' });
   }
   next[key] = { md5, output, duration, orientation };

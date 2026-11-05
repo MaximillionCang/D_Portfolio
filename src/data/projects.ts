@@ -98,6 +98,7 @@ export const projects: Project[] = [
     videos: [
       { ...motion('mantra-talks-reel-01', 'Mantra Talks reel 01'), externalUrl: 'https://www.instagram.com/reel/DLmZpboP7Dr/' },
       { ...motion('mantra-talks-reel-02', 'Mantra Talks reel 02'), externalUrl: 'https://www.instagram.com/reel/DLi9DAAPuFg/' },
+      { ...motion('mantra-talks-reel-03', 'Mantra Talks reel 03'), externalUrl: 'https://www.instagram.com/reel/DL7ABI3vN9p/' },
     ],
   },
   {
@@ -127,7 +128,7 @@ export const projects: Project[] = [
       'As a Graphic Designer Member, I created Instagram feeds and social media content for festive greetings, national celebrations and informational posts, keeping the organization’s visual identity consistent and recognizable.',
     ],
     role: 'Graphic Designer Member', software: ['illustrator', 'canva'], tone: 'blue-light', coverLayout: 'portrait',
-    card: social('ppi malaysia', 'by Darren Ryusa (10).png', 'PPI Malaysia social media design collection'), cover: social('ppi malaysia', 'by Darren Ryusa (10).png', 'PPI Malaysia Instagram design collection'),
+    card: social('ppi malaysia', 'IMG_7963.png', 'PPI Malaysia logo'), logo: true, cover: social('ppi malaysia', 'by Darren Ryusa (10).png', 'PPI Malaysia Instagram design collection'),
     gallery: [social('ppi malaysia', 'by Darren Ryusa (11).png', 'PPI Malaysia social media design presentation'), social('ppi malaysia', 'whatsupnov-06.png', 'PPI Malaysia November informational post')],
   },
   {
@@ -137,7 +138,7 @@ export const projects: Project[] = [
       'As Head of the Illustrator division, I led illustration work and created festive Instagram feeds and visual content for Mitra Remaja Katolik (MITREKA) magazine.',
     ],
     role: 'Head of Illustration', software: ['illustrator', 'photoshop'], tone: 'mist',
-    card: social('humas', 'laptop humas.png', 'HUMAS design presentation on a laptop'), cover: social('humas', 'laptop humas.png', 'HUMAS creative work in a laptop mockup'),
+    card: social('humas', 'Logo humas.png', 'HUMAS illustration and publication logo'), logo: true, cover: social('humas', 'laptop humas.png', 'HUMAS creative work in a laptop mockup'),
     gallery: [
       social('humas', 'feeds imlek.png', 'HUMAS Lunar New Year Instagram feed', 'Lunar New Year'), social('humas', 'feeds jumat agung.png', 'HUMAS Good Friday Instagram feed', 'Good Friday'),
       social('humas', 'majalah 1.png', 'MITREKA magazine illustration and layout', 'MITREKA magazine'), social('humas', 'majalah 2.png', 'MITREKA magazine illustration and layout', 'MITREKA magazine'),
@@ -156,7 +157,7 @@ export const projects: Project[] = [
     slug: 'tutorising', title: 'Tutorising', category: 'Social media content', summary: 'Social stories and moving images for orientation.',
     description: ['As a member of the Orientation Committee’s Publication Team, I created social media content and Instagram Story templates to support the event’s promotion. My work maintained a consistent visual identity and helped communicate important event information to students.'],
     role: 'Publication Team', software: [], tone: 'yellow',
-    card: social('tutorising', 'IMG_4988.PNG', 'Tutorising Instagram Story design'), cover: social('tutorising', 'IMG_4988.PNG', 'Tutorising orientation Instagram Story'), coverLayout: 'portrait',
+    card: social('tutorising', 'Screenshot_2026-11-04_at_10.35.21_PM-removebg-preview.png', 'Tutorising orientation committee logo'), logo: true, cover: social('tutorising', 'IMG_4988.PNG', 'Tutorising orientation Instagram Story'), coverLayout: 'portrait',
     gallery: [social('tutorising', 'IMG_4990.PNG', 'Tutorising Instagram Story template'), social('tutorising', 'IMG_4991.PNG', 'Tutorising Instagram Story template'), social('tutorising', 'IMG_4992.PNG', 'Tutorising Instagram Story template')],
     videos: [motion('tutorising-promotion', 'Orientation, in motion'), motion('tutorising-story-recording', 'Stories in context'), motion('tutorising-orientation', 'A look at orientation')],
   },
@@ -164,7 +165,7 @@ export const projects: Project[] = [
     slug: 'sportlight', title: 'Sportlight', category: 'Social media content', summary: 'An event introduction, from concept to final cut.',
     description: ['As Organizing Chairperson, I led and coordinated every division, including Publicity, for the event. I also conceptualized and edited the introduction video.'],
     role: 'Organizing Chairperson & video editor', software: [], tone: 'blue-light',
-    card: { image: videos['sportlight-introduction'].poster, thumbnail: videos['sportlight-introduction'].poster, source: videos['sportlight-introduction'].source, alt: 'Still from the Sportlight introduction video' },
+    card: social('sportlight', 'LOGO FIX PLSS-07-T (4).png', 'Sportlight event logo'), logo: true,
     cover: { image: videos['sportlight-introduction'].poster, thumbnail: videos['sportlight-introduction'].poster, source: videos['sportlight-introduction'].source, alt: 'Still from the Sportlight introduction video' },
     gallery: [], videos: [motion('sportlight-introduction', 'The Sportlight introduction')], metrics: { views: '15.1k', shares: '606' },
   },

@@ -1,31 +1,27 @@
 # Darren Ryusa portfolio
 
-An English creative portfolio for recruiters and people browsing Darren's work. Its job is to show the work quickly, explain Darren's contribution when a project is opened, and make contact obvious.
-
-Energy 2 / Rhythm 3 / Motion 2. Warm editorial scrapbook direction from the user's reference images, with Darren's supplied portrait, personal mascot and star cursor. Preserve Instrument Serif headings, DM Sans body and Space Mono supporting numerals. The latest user direction calls for less text, less empty space and clearer buttons.
+An English creative portfolio for recruiters and people browsing Darren’s work. Energy 2 / Rhythm 3 / Motion 2. Warm editorial scrapbook direction with restrained studio details, personal portrait, mascot, star cursor, Instrument Serif headings, DM Sans body and Space Mono ratings.
 
 ## Palette
 
-- Blue #4B86B0: large headline accent and device frames.
-- Light blue #C6D8E6: featured work and supporting surfaces.
-- Mist #F4F5F9: neutral page and project-art background, replacing all pink UI.
-- Pale yellow #F8F5B0: meaningful accents and video letterboxing.
-- Brown #4D2A0A: readable text, primary buttons, outlines and footer.
+Blue #4B86B0; light blue #C6D8E6; mist #F4F5F9; pale yellow #F8F5B0; brown #4D2A0A. The About surface mixes the two light palette colors and shares its token with the marquee transition. Original artwork and vendor application logos retain their native colors. No pink UI.
 
-The About background is a mix of the two supplied light neutrals to preserve sufficient contrast for the blue name. Artwork and photographs keep their original colors. No pink UI tokens or pink gallery surfaces.
+## About
 
-## Composition
+Only Darren is blue in the greeting. The final-year student bio appears once, in a pale-yellow speech bubble beside the laptop mascot on the right. What I do uses unframed icons, larger type and ruled columns, becoming readable rows on mobile. Original application logos replace rating rings and letter placeholders. The client-provided ratings remain visible and labelled as personal ratings for assistive technology.
 
-- Hero: personal portrait and mascot overlap, large two-line title, one solid View projects action. Shadow is limited to the physical paper/mascot overlap.
-- About: only Darren is blue in the greeting. Short factual student bio, three recognizable discipline icons with labels, seven self-rated software rings. A ring is a value indicator, not decoration.
-- Work: one featured project, three-column art-led grid without category captions on desktop, responsive two/single columns, a wide photography collection. Remove repeated project numbers, card summaries and decorative mini labels. Each card has an explicit View project action.
-- Detail: project artwork, short paragraphs, role and software facts, paired brochure images before the story for Digital Print Production, expandable image gallery, native video players in phone/tablet frames.
-- Footer: email and phone number are plain text with identifying icons. The number is identified by phone and WhatsApp icons without link/button treatment. LinkedIn is a compact pale-yellow button with slightly rounded corners.
+## Project display
 
-## Interaction
+The client selected a studio display rail instead of the video’s coverflow: a fine line, small clothespins, lightly tilted 3:2 landscape artwork, manual previous/next navigation, native horizontal swipe and scroll snap. All eleven cards share one format. Existing project logos are preferred; four newly supplied logos cover PPI Malaysia, HUMAS, Tutorising and Sportlight. Projects without logos use artwork or a representative photo. Titles stay upright and every card has a visible View project action.
 
-Solid brown primary buttons and outlined light secondary buttons use readable labels, visible borders, 44px minimum hit areas, hover and pressed states, and keyboard focus. No nested card buttons; the whole card is one link with a visible action treatment. Filters are actual buttons with pressed states and live result counts. Image links open a native dialog and still work as direct image links without JavaScript. Video playback uses browser controls, no autoplay and no preload. The moving discipline strip loops continuously without a pause button, as requested, and respects the operating system reduced-motion preference.
+Category filters retain their data, pressed states and live result counts. The rail resets to its beginning after filtering. Buttons disable at the ends. Keyboard users can tab through links or use arrows/Home/End while the rail is focused. Motion respects reduced-motion settings. No autoplay is added to the gallery.
 
-## Content
+## Details and contact
 
-Project facts and software ratings come from the client document. Sportlight's 15.1k views and 606 shares are client-provided values, not live counters. Photography has no fabricated project role or software list. Tutorising and Sportlight software are omitted because the client did not specify them. All 62 project images and 8 videos (including the two supplied Instagram reels) are presented. Decorative source sticker-sheet 20.png is not a separate work item; its old pink decoration is superseded by the palette-consistent CSS motifs.
+Project facts, original images, galleries and native videos remain available. Digital Print Production keeps its paired images above the story. Mantra Talks has three locally playable reels and links to the supplied originals. Sportlight’s engagement values are client-supplied static numbers.
+
+Email and phone remain plain text. LinkedIn matches the contact-row layout: its icon, a LinkedIn label and the name Darren Ryusa as a plain profile link, with no boxed button.
+
+## Asset integrity
+
+Seven application logos come from vendor-owned sources; see docs/SOFTWARE_LOGO_SOURCES.json. SVG originals are used directly; the CapCut favicon’s original image is converted losslessly to PNG. No application logo is AI-generated or redrawn. Project and software images are served locally.

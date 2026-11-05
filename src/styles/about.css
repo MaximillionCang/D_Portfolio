@@ -1,0 +1,54 @@
+.about-band { background: var(--about-surface); padding-block: 52px 44px; }
+.about-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.about-intro h2 { font: 400 clamp(3.7rem, 6.7vw, 6.1rem)/.94 var(--serif); letter-spacing: -.045em; }
+.about-intro h2 em { color: var(--blue); font-weight: 400; }
+.about-note { position: relative; display: flex; justify-content: flex-end; align-items: center; min-height: 190px; padding: 8px 94px 26px 0; }
+.about-bubble { position: relative; max-width: 355px; padding: 21px 23px; background: var(--yellow); border: 1px solid var(--brown); border-radius: 16px; font-size: 1.04rem; line-height: 1.6; }
+.about-bubble::after { content: ''; position: absolute; right: -7px; bottom: 25px; width: 13px; height: 13px; background: var(--yellow); border-top: 1px solid var(--brown); border-right: 1px solid var(--brown); transform: rotate(45deg); }
+.laptop-friend { position: absolute; width: 105px; right: -4px; bottom: 0; }
+.about-disciplines { margin-top: 32px; }
+.discipline-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.discipline-heading h3, .skills-section h3 { font-size: 1rem; font-weight: 600; }
+.discipline-heading .button { min-height: 44px; padding: 10px 15px; font-size: .85rem; }
+.disciplines { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.discipline { display: flex; align-items: center; gap: 14px; padding: 20px 0 10px; border-top: 1px solid #4d2a0a55; }
+.discipline > svg { flex: 0 0 auto; }
+.discipline strong { font-size: clamp(1.15rem, 2vw, 1.6rem); font-weight: 500; letter-spacing: -.025em; }
+.skills-section { margin-top: 28px; padding-top: 24px; border-top: 1px solid #4d2a0a33; }
+.skills-list { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+.skill-item { display: grid; justify-items: center; align-content: start; gap: 6px; text-align: center; }
+.tool-logo { width: 56px; height: 56px; object-fit: contain; }
+.skill-item strong { margin-top: 7px; font-size: .8rem; font-weight: 500; }
+.skill-item > span { font: 400 .72rem var(--mono); }
+@media (max-width: 1000px) {
+  .about-content { gap: 32px; }
+  .about-note { padding-right: 78px; }
+  .laptop-friend { width: 88px; }
+  .about-bubble { padding: 17px; font-size: .95rem; }
+  .disciplines { gap: 22px; }
+  .discipline { gap: 10px; }
+}
+@media (max-width: 760px) {
+  .about-content { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .about-note { width: min(100%, 475px); justify-self: end; min-height: 155px; padding: 0 88px 20px 0; }
+  .laptop-friend { width: 97px; }
+  .about-bubble { font-size: 1rem; }
+  .skills-list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 14px; }
+}
+@media (max-width: 540px) {
+  .about-band { padding-block: 36px; }
+  .about-intro h2 { font-size: clamp(3.4rem, 16vw, 5rem); }
+  .about-note { padding-right: 73px; }
+  .laptop-friend { width: 84px; }
+  .about-bubble { padding: 16px; font-size: .94rem; }
+  .about-disciplines { margin-top: 22px; }
+  .disciplines { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .discipline { padding: 15px 0; }
+  .discipline strong { font-size: 1.2rem; }
+  .discipline > svg { width: 25px; height: 25px; }
+  .skills-section { margin-top: 18px; }
+  .skills-list { gap: 22px 10px; }
+  .tool-logo { width: 48px; height: 48px; }
+  .skill-item strong { font-size: .74rem; }
+}
+@media (max-width: 360px) { .skills-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
