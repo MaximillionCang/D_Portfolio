@@ -22,6 +22,8 @@ The shared page width grows to 2240 px with gutters from 20 to 72 px, reducing t
 
 The hero has its own centered 1600 px composition with balanced art and copy columns. The headline, byline and project button align centrally within the copy column, correcting the previous visual weight towards the left of wide screens. The rest of the page keeps its wider shared alignment.
 
+On desktop, the mascot and welcome bubble share a small rightward offset, capped at 56 px, bringing the character towards the visual center and reducing the gap before the headline. The photo keeps its position. The adjustment does not apply to the stacked phone/tablet composition.
+
 The existing tagline appears once, in a pale-yellow speech bubble pointing towards the mascot. A single 650 ms opacity/transform entrance follows a 300 ms delay on each fresh page load. It settles to the normal visible state without timers, text replacement, hover replay or dismissal. Reduced-motion renders the final state immediately. On phones, a reserved space above the photo and character keeps the bubble away from their faces. No new image asset or animation library is introduced.
 
 The project heading stands alone; the former Branding, content, illustrations & moments caption is removed at the client’s request.

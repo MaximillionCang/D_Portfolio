@@ -51,3 +51,11 @@ The client identified the central gap between the two-line greeting and the righ
 - Delivery gate PASS for this scope: the supplied palette, original portrait/mascot, readable text and existing native controls remain. The animation uses only opacity/transform, runs once and reserves its layout. The purpose of centering, the bubble and caption removal is recorded in DESIGN.md; no fabricated claim, new graphic asset, library or unnecessary section is introduced. Existing Energy 2 / Rhythm 3 / Motion 2 direction is retained.
 
 The browser checks use Chromium on Windows and viewport resizing. Actual Safari/macOS and iPhone hardware remain untested. No push or deployment was performed.
+
+## Follow-up: mascot position
+
+The client requested a small rightward adjustment to the hero character. A shared desktop offset moves the mascot and bubble by up to 56 px, leaving the photo and stacked mobile layout intact.
+
+- Responsive check PASS: 390, 760, 1000, 1001, 1024, 1440, 1920 and 2560 px have no document overflow, off-screen mascot/bubble or mascot/headline overlap. The desktop preview was visually reviewed.
+- Build PASS: 13 static pages generated. This CSS-only change adds no logic or dependency.
+- Delivery gate PASS for this scope: original assets, palette, typography, animation and controls remain; the adjustment has a documented composition purpose and preserves mobile bounds. No unsupported claim or new interactive element is introduced.
