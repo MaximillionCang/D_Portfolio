@@ -5,7 +5,7 @@ import ProjectCard from './ProjectCard.astro';
 import Icon from './Icon.astro';
 ---
 <section class="work-section section-wrap" id="work" aria-labelledby="work-title">
-  <div class="work-heading"><h2 id="work-title">Things I’ve <em>created.</em></h2><p>Branding, content, illustrations & moments.</p></div>
+  <div class="work-heading"><h2 id="work-title">Things I’ve <em>created.</em></h2></div>
   <div class="work-toolbar">
     <div class="filters" role="group" aria-label="Filter projects">{categories.map((category, index) => <button type="button" class="filter" data-filter={category} aria-pressed={index === 0 ? 'true' : 'false'}>{category}</button>)}</div>
     <div class="gallery-navigation" role="group" aria-label="Browse projects"><button class="gallery-arrow" type="button" data-direction="previous" aria-label="Previous projects" aria-controls="project-grid" disabled><Icon name="previous" size={23} /></button><button class="gallery-arrow" type="button" data-direction="next" aria-label="Next projects" aria-controls="project-grid"><Icon name="next" size={23} /></button></div>

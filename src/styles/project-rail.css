@@ -2,7 +2,6 @@
 .work-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 28px; }
 .work-heading h2 { max-width: 700px; font: 400 clamp(3.7rem, 6vw, 6.1rem)/.95 var(--serif); letter-spacing: -.045em; }
 .work-heading h2 em { color: var(--blue); font-weight: 400; }
-.work-heading p { max-width: 245px; font-size: .95rem; padding-bottom: 6px; }
 .work-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; }
 .filter { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 15px; border: 1px solid var(--brown); border-radius: 7px; background: transparent; font-size: .85rem; font-weight: 600; }
@@ -66,7 +65,7 @@
 .empty-projects h3 { font: 400 3.2rem/1 var(--serif); }
 .empty-projects p { margin-block: 12px 20px; }
 @media (max-width: 1000px) { .work-track { --card-width: 340px; gap: 25px; } }
-@media (max-width: 760px) { .work-heading { display: block; } .work-heading p { max-width: none; margin-top: 14px; } }
+@media (max-width: 760px) { .work-heading { display: block; } }
 @media (max-width: 540px) {
   .work-section { padding-block: 40px 36px; }
   .work-heading h2 { font-size: 15vw; }

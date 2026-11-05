@@ -1,77 +1,194 @@
-# Darren Ryusa — Creative Portfolio
+# Darren Ryusa Creative Portfolio
 
-Portfolio berbahasa Inggris untuk menampilkan karya dan membantu Darren melamar kerja. Dibangun dengan Astro 5, TypeScript, dan CSS; hasil build berupa website statis untuk Vercel.
+An English-language portfolio for Darren’s graphic design, social media, illustration and photography work. Built to present projects to recruiters and keep his creative work in one place.
 
-## Menjalankan
+Built with **Astro 5, TypeScript and CSS**. The site generates static pages for Vercel, with local images and videos. No database, CMS or environment variables are required.
 
-Gunakan Node.js 22 atau lebih baru dari folder Portfolio_Darren:
+## Run locally
 
-```powershell
-npm install
+Use Node.js 22+ and npm. From the project directory:
+
+```sh
+npm ci
 npm run dev
 ```
 
-Sebelum publikasi:
+Open the local URL printed in the terminal. Add `/#work` to jump to the project gallery.
 
-```powershell
-npx tsc --noEmit
-npm run build
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npx tsc --noEmit` | Check TypeScript without generating files |
+| `npm run build` | Generate the static website in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run portfolio:prepare` | Prepare project media from the original `Asset/` directory |
+
+Run `npm run build` before `npm run preview`. Media preparation is only needed when original media changes; it is not required for a normal build or deployment.
+
+## Website features
+
+- A centered hero with Darren’s portrait, mascot and a speech bubble. The welcome animation plays once per page load, then the bubble stays visible. Reduced-motion settings show it immediately.
+- An About section with a student introduction, three creative disciplines, original application logos and visual proficiency meters.
+- Eleven projects displayed as landscape cards on a studio-style hanging rail. Browse with arrow buttons, the large slider, keyboard controls or horizontal swiping. Cards sway briefly in response to scrolling.
+- Filters for Graphic Design, Social media content, Illustration and Photography.
+- Individual project pages with descriptions, contributions, software, images and native video players.
+- An image viewer with previous/next navigation, a close control and keyboard support.
+- Portrait videos in iPhone-style frames with a notch; landscape videos use tablet frames. Related portrait reels share one desktop row and scroll horizontally on smaller screens.
+- Plain-text email and phone details, plus a LinkedIn profile link. There is no contact form or email delivery service.
+
+## Project structure
+
+| Location | Contents |
+| --- | --- |
+| `src/pages/index.astro` | Hero, welcome bubble and homepage section order |
+| `src/pages/work/[slug].astro` | Shared project detail template |
+| `src/layouts/BaseLayout.astro` | Metadata, navigation, contact details and footer |
+| `src/components/AboutSection.astro` | Introduction, disciplines and software proficiency |
+| `src/components/ProjectRail.astro` | Project filters, arrows and slider |
+| `src/components/VideoPlayer.astro` | Shared video player markup |
+| `src/components/MediaViewer.astro` | Image viewer and keyboard behavior |
+| `src/styles/` | Shared and component styles |
+| `src/scripts/rail-wind.ts` | Directional card sway and motion cleanup |
+| `src/data/projects.ts` | Project content and display order |
+| `src/data/skills.ts` | Application names, logos and personal proficiency values |
+| `src/data/media.ts`, `src/data/videos.ts` | Generated media references |
+| `src/assets/portfolio/` | Prepared project images, thumbnails and video posters |
+| `public/videos/`, `public/software/` | Local video files and original application logos |
+| `scripts/` | Media preparation utilities |
+| `docs/` | QC reports and asset provenance |
+
+## Update content
+
+### Projects
+
+Edit `src/data/projects.ts`. Each project defines its title, unique slug, category, summary, description, role, software, card cover, detail cover, gallery and optional videos or metrics.
+
+The array order controls both the homepage order and the **Next project** links. Keep existing slugs stable to preserve published URLs. The `real-food` slug intentionally remains in use for the project titled **Keep It Real**.
+
+To add a project:
+
+1. Add and prepare its original media as described below.
+2. Add an entry following an existing project with the same category and media type.
+3. Use prepared media keys, accurate image descriptions and a unique slug.
+4. Check its category filter, detail page, images, videos and next-project navigation.
+
+Project logos are preferred for rail covers. Where no logo exists, use a representative artwork or photograph. Do not invent project results, software, client quotes or missing descriptions.
+
+### Software proficiency
+
+Edit the values in `src/data/skills.ts`. Ratings are the client’s personal assessments on a 0–10 scale. The visible meters use those values directly; accompanying labels currently map scores of 9 or higher to **Advanced**, and lower scores to **Proficient**. These labels are not certifications.
+
+If changing the scale or adding different levels, update the display logic in `AboutSection.astro` as well. Original application logos and source records are kept in `public/software/` and `docs/SOFTWARE_LOGO_SOURCES.json`.
+
+### Contact details and copy
+
+Update contact information, navigation and shared metadata in `src/layouts/BaseLayout.astro`. Hero and welcome text live in `src/pages/index.astro`; the student introduction is in `AboutSection.astro`.
+
+The phone is displayed in its local Malaysian format. Email and phone details are intentionally plain text. LinkedIn opens the confirmed profile in a new tab.
+
+## Prepare images and videos
+
+The original **`Asset/` directory is ignored by Git**. Keep the prepared web files and generated data references committed so the website builds without the originals on Vercel.
+
+Expected original-media folders:
+
+```text
+Asset/
+  Graphic_Design/
+  Social_Media_Content/
+  Illustration/
+  Photography/
 ```
 
-Vercel: preset **Astro**, build command `npm run build`, output `dist`, root direktori proyek. Tidak perlu environment variable. Build memakai media web yang sudah masuk Git, sehingga folder asli Asset tidak diperlukan di Vercel.
+Image preparation uses Sharp. Video preparation also requires FFmpeg. After placing originals in the appropriate folders, run:
 
-## Isi dan tampilan
-
-- 11 proyek, dengan filter Graphic Design, Social media content, Illustration, dan Photography.
-- 66 gambar proyek dan 9 video, termasuk 29 foto dan tiga reel Mantra Talks.
-- Galeri gambar layar besar dengan tombol Close, Previous, Next dan kontrol keyboard.
-- Video native dengan kontrol browser, tanpa autoplay; portrait memakai bingkai ponsel, landscape memakai bingkai tablet.
-- Email dan nomor telepon tampil sebagai teks biasa. Ikon telepon menandai nomor; LinkedIn tampil sebagai baris kontak dengan ikon dan nama yang menaut ke profil. Informasi kontak berada di `src/layouts/BaseLayout.astro`.
-
-Font: Instrument Serif, DM Sans, Space Mono. Palet tampilan: #4B86B0, #C6D8E6, #F4F5F9, #F8F5B0, #4D2A0A. Tidak ada latar UI pink; warna asli karya/foto dipertahankan. Arahan desain ada di DESIGN.md.
-
-Galeri beranda memakai pajangan bertali dengan kartu 3:2, tombol panah dan swipe horizontal. Komponen About berada di src/components/AboutSection.astro; galeri di src/components/ProjectRail.astro, dengan stylesheet terpisah. Logo aplikasi asli disimpan di public/software; sumber dan hash file tercatat di docs/SOFTWARE_LOGO_SOURCES.json.
-
-Kartu karya berayun mengikuti arah geseran melalui src/scripts/rail-wind.ts. Ayunan mereda setelah berhenti, tidak berjalan saat halaman tersembunyi, dan dinonaktifkan untuk reduced motion. Penggeser native dengan handle lebih besar menggantikan scrollbar tipis; posisi paling kanan mencapai proyek terakhir tanpa snap yang melawan gerakan mouse. Tools memakai dua baris desktop dan dua kolom HP, dengan logo asli, nama besar, label Advanced/Proficient serta bar visual sesuai nilai pribadi klien.
-
-Lebar halaman bersama maksimum 2240 px dengan jarak tepi 20–72 px; header dan footer mengikuti perataan yang sama. Tiga reel Mantra berjajar satu baris pada desktop dan bisa digeser mendatar pada HP. Semua bingkai video portrait memakai gaya iPhone dengan notch sebelum Dynamic Island; kontrol video tetap native dan tidak autoplay.
-
-## Mengubah konten
-
-`src/data/projects.ts` menyimpan judul, kategori, deskripsi, kontribusi, software, sampul, galeri, dan video setiap proyek. Urutan array menentukan urutan beranda dan tautan Next project. Slug real-food dipertahankan untuk proyek yang sekarang bernama **Keep It Real**, agar URL lama tetap berfungsi.
-
-`src/data/skills.ts` menyimpan tujuh nilai software yang diberikan klien. Nilainya merupakan penilaian pribadi; keterangan ini tetap tersedia pada label pembaca layar. Tampilan menggunakan Advanced untuk nilai 9 dan Proficient untuk 7.5 atau 8; bukan klaim sertifikasi. Angka Sportlight 15.1k views dan 606 shares berasal dari klien dan bukan penghitung langsung.
-
-Untuk menambah gambar, letakkan file asli di subfolder Asset, jalankan penyiapan media, lalu referensikan path sumbernya melalui data proyek. Alt text harus mendeskripsikan gambar sebenarnya. Software Tutorising dan Sportlight sengaja tidak diisi karena klien belum menyebutkannya.
-
-## Menyiapkan media
-
-Folder Asset berisi file asli dan diabaikan Git. Versi web berada di `src/assets/portfolio` dan `public/videos`, serta **harus** masuk Git. Untuk menyiapkan ulang, pasang FFmpeg dan jalankan:
-
-```powershell
+```sh
 npm run portfolio:prepare
 ```
 
-Jika FFmpeg tidak berada di PATH:
+If FFmpeg is not on your PATH, pass its executable path explicitly:
 
 ```powershell
-node scripts/prepare-portfolio.mjs Asset "C:\path\ke\ffmpeg.exe"
+node scripts/prepare-portfolio.mjs Asset "C:\path\to\ffmpeg.exe"
 ```
 
-Script mempertahankan file asli. Gambar diorientasikan dari EXIF, dikonversi menjadi WebP maksimum 2000 px, dan memiliki thumbnail 720 px. PNG transparan dipangkas; kanvas putih luar papan Carnival dibuang tanpa menghapus putih di dalam desain. Mockup Mantra diputar menjadi portrait. Video dikonversi ke MP4 H.264/AAC dengan faststart. Cache hash di `src/data/media-manifest.json` menghindari konversi ulang file yang sama.
+The preparation script:
 
-Tiga reel Mantra disimpan di `Asset/Graphic_Design/mantra talks/reels` sebagai mantra-talks-reel-01.mp4 sampai mantra-talks-reel-03.mp4. Versi web lokal dapat diputar tanpa login Instagram; tautan posting aslinya tetap tersedia.
+- Preserves originals and uses cached hashes to skip unchanged media.
+- Corrects image orientation and creates WebP images up to 2000 px with smaller thumbnails.
+- Applies existing project-specific cropping and the upright Mantra phone-mockup rotation.
+- Produces MP4 files using H.264/AAC with faststart and local poster images.
+- Updates generated image/video references and `src/data/media-manifest.json`.
 
-`assets:prepare` dan `videos:prepare` adalah script lama untuk aset hero/kursor dan dua video Carnival. Gunakan `portfolio:prepare` untuk seluruh koleksi proyek terbaru.
+New videos must also be registered in the `videos` list in `scripts/prepare-portfolio.mjs` before preparation. Keep the existing referenced originals available when rerunning the complete pipeline.
 
-## Pemeriksaan sebelum push
+The three Mantra reels are stored under `Asset/Graphic_Design/mantra talks/reels/`, named `mantra-talks-reel-01.mp4` through `mantra-talks-reel-03.mp4`. Web copies play locally without an Instagram login; the original post links remain available beside them.
 
-Periksa beranda dan detail proyek di desktop/HP, filter, galeri keyboard, semua video, serta informasi kontak. QC utama ada di docs/QC-2026-11-05.md; revisi meter, lebar halaman, penggeser dan bingkai iPhone dicatat di docs/QC-2026-11-05-layout-controls.md.
+`assets:prepare` and `videos:prepare` are older utilities for hero/cursor assets and Carnival media. Use `portfolio:prepare` for the full project-media collection.
 
-Kursor menggunakan PNG transparan sRGB 32×32, hotspot 16,16 dan fallback sistem. Mouse/trackpad memakai kursor khusus; input teks tetap memakai kursor teks. Pengujian langsung Safari/macOS tetap memerlukan perangkat Mac. Nomor lokal 0177340593 ditampilkan sebagai teks dengan ikon telepon tanpa tombol atau tautan. Kode negara Malaysia +60 sudah dikonfirmasi.
+## Design and interaction
 
-```powershell
+The design direction is recorded in `DESIGN.md`. Project revision instructions are in `AGENTS.md`.
+
+| Role | Value |
+| --- | --- |
+| Heading font | Instrument Serif |
+| Body font | DM Sans |
+| Supporting font | Space Mono |
+| Blue | `#4B86B0` |
+| Light blue | `#C6D8E6` |
+| Mist | `#F4F5F9` |
+| Pale yellow | `#F8F5B0` |
+| Brown | `#4D2A0A` |
+
+UI colors follow this palette; supplied artwork, photographs and vendor logos retain their original colors. Fonts load from Google Fonts with local fallback families.
+
+The general page width is capped at 2240 px. The hero uses a centered 1600 px composition, while text and portrait media retain their own readable limits. Phone layouts reflow rather than shrinking the desktop page.
+
+The welcome bubble uses a short, single CSS animation with no timer, typing loop or automatic dismissal. Card sway stops at rest and when the page is hidden. Reduced-motion settings disable decorative motion. Videos do not autoplay and retain native controls.
+
+Mouse and trackpad devices use the supplied 32×32 transparent PNG cursor with a system fallback. Text inputs retain the normal text cursor.
+
+## Deploy to Vercel
+
+First verify the production build:
+
+```sh
+npx tsc --noEmit
+npm run build
+npm run preview
+```
+
+Import the GitHub repository into Vercel using these project settings:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | Astro |
+| Root directory | The directory containing `package.json` |
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| Environment variables | None required |
+
+Use the production build command rather than the development or preview server. A build log that remains on **watching for file changes** indicates that a long-running development command is being used.
+
+After reviewing and committing changes, push the connected production branch:
+
+```sh
 git push origin main
 ```
 
-Push ke branch yang terhubung akan memicu build Vercel. Folder dist tidak perlu dimasukkan Git.
+The connected Vercel project builds from the pushed source. Do not commit `node_modules/`, `dist/`, `.astro/`, `.vercel/` or the original `Asset/` directory. Prepared media in `src/assets/portfolio/` and `public/videos/` must remain tracked.
+
+## Quality checks and troubleshooting
+
+Before pushing, check the homepage and project pages on desktop and phone widths. Exercise the welcome bubble, filters, slider endpoints, keyboard navigation, image viewer, video players and LinkedIn link.
+
+| Issue | Check |
+| --- | --- |
+| A project image is missing | Confirm the prepared file exists and the key in `projects.ts` matches the generated media data |
+| Media preparation fails | Confirm the originals exist and FFmpeg is installed or explicitly supplied |
+| Deployment does not finish | Confirm Vercel runs `npm run build`, not `npm run dev` or `npm run preview` |
+| Changes are not visible online | Confirm the commit was pushed to the connected production branch and its deployment completed |
+| A video does not load | Check that its MP4 and poster files are committed and referenced correctly |
+
+Recorded checks and limitations are in [the main QC report](docs/QC-2026-11-05.md) and [the layout and controls follow-up](docs/QC-2026-11-05-layout-controls.md). These cover Chromium on Windows and responsive viewports. Actual Safari/macOS and iPhone hardware still require device testing; no Lighthouse or Web Vitals score is claimed.

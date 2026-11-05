@@ -39,3 +39,15 @@ The client identified the central gap between the two-line greeting and the righ
 - Heading composition PASS: the greeting occupies one line from the checked tablet width of 760 px through 2560 px; at 320 and 390 it wraps to two readable lines. Desktop and phone screenshots were reviewed.
 - Build/type checks PASS: 13 static routes generated and npx tsc --noEmit completed. Browser warning/error log is empty.
 - Delivery gate PASS for this CSS/markup scope: shared palette, fonts, original assets, accessible heading text and existing controls are preserved; no new claim, navigation, motion or dependency is added. The change directly addresses unused space, with its purpose recorded in DESIGN.md. Existing Energy 2 / Rhythm 3 / Motion 2 direction remains.
+
+## Follow-up: centered hero, welcome and English README
+
+- Hero layout PASS: the hero wrapper is capped at 1600 px and centered, with equal art/copy columns and centered copy. The wider header, About, gallery and footer alignment remains.
+- Responsive bounds PASS: at 320, 390, 540, 760, 761, 820, 1000, 1024, 1440, 1920 and 2560 px there is no document overflow; the bubble stays in bounds and does not overlap the headline. An initial 761 px bubble offset was corrected before delivery. Desktop and phone screenshots were reviewed.
+- Single entrance PASS: immediately after reloading, browser styles show opacity 0 during the 300 ms delay, duration 650 ms and iteration count 1. A later observation shows opacity 1 and transform none; it remains in that final state during further checks. No timer or scripted text replacement is added. Reduced-motion’s immediate final state is verified in the CSS, not through an OS preference change.
+- Content PASS: the tagline occurs once in the welcome bubble; the former gallery caption is absent. View projects still navigates to #work. No warning or error entries are recorded.
+- Build/type checks PASS: 13 static routes generated after the final style correction; TypeScript completes without errors.
+- README PASS by source review: rewritten entirely in English, with setup, command reference, project structure, content editing, media preparation, design, Vercel configuration and troubleshooting. Commands and paths were checked against package.json, the preparation script, source files and .gitignore. No new installation or deployment was performed for the documentation check.
+- Delivery gate PASS for this scope: the supplied palette, original portrait/mascot, readable text and existing native controls remain. The animation uses only opacity/transform, runs once and reserves its layout. The purpose of centering, the bubble and caption removal is recorded in DESIGN.md; no fabricated claim, new graphic asset, library or unnecessary section is introduced. Existing Energy 2 / Rhythm 3 / Motion 2 direction is retained.
+
+The browser checks use Chromium on Windows and viewport resizing. Actual Safari/macOS and iPhone hardware remain untested. No push or deployment was performed.

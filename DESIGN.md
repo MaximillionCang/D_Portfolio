@@ -18,6 +18,14 @@ Tools use two desktop rows: four design/photo applications followed by three mot
 
 The shared page width grows to 2240 px with gutters from 20 to 72 px, reducing the previous large desktop margins. Header, sections and footer share this alignment. Body paragraphs and portrait media retain their readable limits; expanding the page does not stretch a phone or a paragraph to the full desktop width.
 
+## Hero welcome
+
+The hero has its own centered 1600 px composition with balanced art and copy columns. The headline, byline and project button align centrally within the copy column, correcting the previous visual weight towards the left of wide screens. The rest of the page keeps its wider shared alignment.
+
+The existing tagline appears once, in a pale-yellow speech bubble pointing towards the mascot. A single 650 ms opacity/transform entrance follows a 300 ms delay on each fresh page load. It settles to the normal visible state without timers, text replacement, hover replay or dismissal. Reduced-motion renders the final state immediately. On phones, a reserved space above the photo and character keeps the bubble away from their faces. No new image asset or animation library is introduced.
+
+The project heading stands alone; the former Branding, content, illustrations & moments caption is removed at the client’s request.
+
 ## Project display
 
 The client selected a studio display rail instead of the video’s coverflow: a fine line, small clothespins, lightly tilted 3:2 landscape artwork, manual previous/next navigation and native horizontal swipe. All eleven cards share one format. Existing project logos are preferred; four newly supplied logos cover PPI Malaysia, HUMAS, Tutorising and Sportlight. Projects without logos use artwork or a representative photo. Titles stay upright and every card has a visible View project action.
